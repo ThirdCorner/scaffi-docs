@@ -1,0 +1,78 @@
+<div class="route route-overview.getting-started.editing-fixtures">
+    <section>
+        <h1>Manipulate Fixtures</h1>
+
+        <p>If fixtures are just a mockup of server requests, we should theoretically be able to submit changes to those fixtures. Theoretically, right?</p>
+        <p>Stop your npm process and let’s add a page to our products route:</p>
+        <p class="command">yo scaffi:page</p>
+
+        <ul class="list">
+            <li>Say "products" for the Route Path</li>
+            <li>Select the form option because we want to edit and submit data</li>
+            <li>Hit space on both edit and add and hit enter. We’re telling Scaffi that this form will add and edit server data</li>
+            <li>Say "ProductsService" for the service, since that’s where we’re making our server calls from. Make sure you put ProductsService with the small 's' in there, otherwise you’ll get an injection error because ProductService does not exist.</li>
+        </ul>
+
+        <p>In your IDE, if you take a look at /src/ui/app/routes/products, we now have a folder called form. You’d expect the url then to equate to "localhost:5010/products/form", right? The page generator for form is specially set up to give us several routes "/products/add" and "/products/:id/edit" which should look very familiar if you’re used to classic REST setups. You can see these if you look at the products-form.page.js page:</p>
+        <p>
+            <b>Edit Route Portion</b><br>
+            'app.products.edit'<br>
+            url: '/:ProductsServiceID/edit',
+        </p>
+        <p>
+            <b>Add Route Portion</b><br>
+            'app.products.add'<br>
+            url: '/add',
+        </p>
+        <p>In the /src/ui/app/routes/products/form/products-form.html page, replace it with the following:</p>
+
+        <pre><code class="html" template="vm.getSampleData1()"></code></pre>
+
+        <p>This is a simple form, matching the properties in our fixture so that we can edit them.</p>
+        <p>One last change we need to do is in /src/ui/app/routers/products/index/products-index.html.</p>
+        <p>Change any instance of ng-click="null" to the following:</p>
+
+        <pre><code template="vm.getSampleData2()"></code></pre>
+
+        <p>This will let the list items go to the form in an editable state.</p>
+        <p>Go ahead and run ‘npm start’ again and refresh your page.</p>
+        <p>Nothing should look different, except when you click on SlingSling, it should bring you to the following page:</p>
+
+        <img src="/resources/images/getting-started-manipulate-fixtures-1st.png" />
+
+        <p>Let’s test out the form:</p>
+
+        <ul class="list">
+            <li>Check the “Is Complete?” checkbox</li>
+            <li>Change “SlingSling” to “SlingADingDing”</li>
+            <li>Hit submit</li>
+        </ul>
+
+        <p>Your list page should now look like so:</p>
+
+        <img src="/resources/images/getting-started-manipulate-fixtures-2nd.png" />
+
+        <p>As you can see, we submitted data, changed page states and it propagated as if we had a server attached. If we hooked this up to a server with a matching schema to our fixture, we wouldn’t need to change any code. </p>
+        <p>Let’s do an add state. In /src/ui/app/routes/products/index/products-index.html, after the first md-content tag, add a link:</p>
+
+        <pre><code class="html" template="vm.getSampleData3()"></code></pre>
+
+        <img src="/resources/images/getting-started-manipulate-fixtures-3rd.png" />
+
+        <p class="alert">!!! Once your page auto-refreshes, you’ll notice our data has “reset”: one active item and one completed item. That’s because fixture data is stored in browser memory. Fixture changes only propagate through state changes in ui-router. Once you refresh, the state is back to the beginning. So if you need to test with a certain data setup, you’ll want to do so in the fixture files so that when you make code changes, it puts you back to where you need to start when you’re troubleshooting something. !!!</p>
+        <p>Now we have our link “Add a product” right under our “Products” header.</p>
+
+        <img src="/resources/images/getting-started-manipulate-fixtures-4th.png" />
+
+        <p>If we click the link and add some data, it should submit the form and add your test data to the list:</p>
+
+        <img src="/resources/images/getting-started-manipulate-fixtures-5th.png" />
+
+        <p>That’s the gist of prototype mode. You can bake in all your front-end logic, hook things up via REST as if you were working with a server and get through most all your functional requirements. Then, when everything is solidified, you can move on to configuring the server portion.</p>
+    </section>
+    <section layout="row">
+        <md-button ui-sref="app.overview.getting-started.fixture-setup"><i class="fa fa-arrow-left"></i> Fixture Setup</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.server-setup">Server Setup <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>

@@ -1,0 +1,23 @@
+<div class="route route-overview.getting-started.setup">
+    <section>
+        <h1>Setup</h1>
+    </section>
+    <overview-installation-install></overview-installation-install>
+    <section>
+        <h2>Disabling Cache</h2>
+        <p>You need cache disabled so that when you make changes to your code, the browser doesn't keep an old compiled build of your code. When you have Chrome's console open, you can tell it not to cache.</p>
+        <ol>
+            <li>With chrome focused, hit F12 to open up the Developer Tools window.</li>
+            <li>Click on the Network Tab.</li>
+            <li>
+                <div>Make sure the "Disable cache" checkbox is checked.</div>
+                <img src="/resources/images/getting-started-clear-cache.png" />
+            </li>
+        </ol>
+    </section>
+    <section layout="row">
+        <md-button ui-sref="app.overview.getting-started"><i class="fa fa-arrow-left"></i> Getting Started</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.project-setup">Project Setup <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>

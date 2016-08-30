@@ -1,0 +1,17 @@
+<div class="route route-overview.getting-started.index">
+    <section>
+        <h1>Getting Started</h1>
+        <p>This tutorial is meant to showcase the workflow involved with using Scaffi. Scaffi is a non-traditional library that lets you bake your UI logic without a backend and then fill in the Server component afterward. An overview of a general project flow when done in Scaffi:</p>
+        <ul class="list">
+            <li>
+               <b>Wireframe / Mockup Stage</b> <br>This is when you whiteboard your site to figure out what general features it's supposed to have. This is the time to document the expected functionality the app should adhere to. No coding should be done at this stage.
+            </li>
+            <li><b>Prototype Stage</b>: <br>This is when you open up your IDE and start using Scaffi. You run the UI in prototype mode which mimics classic CRUD structure and stores data in browser memory. This allows you to bake as much front-end logic as possible into your app without needing to upkeep a backend. You can code all your UI logic, let the client see and play around with the app, and fully solidify acceptance criteria. If changes need to happen, it’s much easier to change the UI. Otherwise, traditionally, you'd have to make changes to the UI and Backend depending on the request.</li>
+            <li><b>Server Stage</b>: <br>Once the prototype has been signed off as meeting all functional front-end requirements, we move onto the server stage. Because we’ve already went through rounds of changes with the client by this point, you’ll have a thorough understanding of what data structures you need the backend to store and the process turns into simply building the schema for the database and building the CRUD structures. Scaffi Server leverages certain packages so that even the controller construction level of effort is reduced significantly.</li>
+        </ul>
+        <p>This tutorial will walk you through how this workflow happens so you can get a good grasp of the logistics.</p>
+    </section>
+    <section layout="row" layout-align="end">
+        <md-button ui-sref="app.overview.getting-started.setup">To Setup <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>

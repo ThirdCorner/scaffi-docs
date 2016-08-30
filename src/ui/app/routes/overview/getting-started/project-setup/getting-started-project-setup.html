@@ -1,0 +1,61 @@
+<div class="route route-overview.getting-started.project-setup">
+    <section>
+        <h1>Project Setup</h1>
+    </section>
+    <section>
+        <h2>Let's make a project</h2>
+        <p>Scaffi has a lot of baked in structure in the framework, so it leverages Yeoman to handle any file generation so that we don’t need to copy/paste whenever we’re adding something to a project. It even comes with a generator to scaffold out a new project so let’s do that. In your CMD window, navigate to your projects directory, wherever you want this tutorial project to go. Once you’re there, run the following:</p>
+
+        <p class="command">yo scaffi</p>
+
+        <p>This will start Yeoman and run you through project creation. For the sake of this tutorial, do the following so we can have a basis to work with:</p>
+        <ol>
+            <li>Hit enter at the first prompt</li>
+            <li>Hit enter at “New Project/Add to Project”</li>
+            <li>Hit enter for “Both”</li>
+            <li>Project Name: rocking-form</li>
+            <li>Add your name</li>
+            <li>Type “api” (This is setting up the base route, as in where to direct all api server requests when not in prototype mode made by the UI)</li>
+            <li>Type 5010 (This is the UI location in the browser when you’re developing.)</li>
+            <li>Type 3000 (This is the Localhost Server location the UI calls to make requests)</li>
+            <li>Hit enter for defaults (If we had a database/api that we have to hook into, we might customize here to tell Scaffi how to parse data structures coming in from the server)</li>
+            <li>This will now run npm/jspm install on the UI and the Server. Go get coffee, this will take a bit.</li>
+            <li>Once that’s all installed, it’s going to have you pick a theme. Again, hit enter and then select Angular Material (Scaffi can do both material and bootstrap, so you’d pick whichever you need for your project. But, material is definitely worth it if you can use it)</li>
+        </ol>
+        <p>After the theme installs, you should be back at the CMD prompt. Change into ‘rocking-form’ and type:</p>
+
+        <p class="command">yo scaffi:mode</p>
+
+        <p>This command is for switching between various environment modes (production, qa, development, prototype, localhost). Everything but prototype mode expects a backend service to talk to. For now, hit enter and select Prototype, and hit enter again.</p>
+        <p>To start the UI, in your CMD window, change into “src\ui” and run:</p>
+
+        <p class="command">npm start</p>
+
+        <p>If all was good with your setup, this will start some gulp processes. Give it a minute and it’ll launch a browser tab going to <a href="http://localhost:5010">http://localhost:5010</a>. It should look like this, unless we’ve added a theme to the generators: </p>
+        <img src="/resources/images/getting-started-project-1st.png" />
+
+        <p class="alert">Whenever you run the app in the browser, make sure to open the console window in Chrome. We have browserify watching for changes, so as long as you have the console open, you can make changes and the page will auto-refresh. If however, you make changes and then start up npm start, you want to make sure your console is open and then refresh the page. This will get a fresh copy of your changes. So remember, if you end up wondering “Where the hecks the changes I just made”, make sure your console is open, caching is disabled in network tab in chrome, and you’ve manually refreshed for the first time.</p>
+
+        <p>Congrats, you now have a fully scaffolded template project to edit to your hearts content. Let’s dig into this whole prototype mode thingymajigger.</p>
+
+        <p>In your favorite IDE, open up the project source that got generated. We only care about the UI code right now, so take a look in src\ui. Should look like a standard project setup, except with maybe a couple more json files than you’re used to. The angular app source is in the ‘app’ folder, in which you will see your typical angular module concepts. Once you’ve taken a look around, let’s highlight some distinctions that Scaffi makes:</p>
+
+        <ul class="list">
+            <li>components: These are html tag type components, like a date picker or whatnot that are used throughout the app in an html template.</li>
+            <li>directives: These are html tag attribute components. These don’t have a template associated with them.</li>
+            <li>factories: These are general singleton classes in your app that you can call. For instance, an ErrorHandling class would be a factory, since you want to be able to use it anywhere in your apps controllers.</li>
+            <li>routes: Where all your pages and their controllers live. The structure of the routes folder will match your browser url. If you had a url localhost:5010/products/edit, your file path in routes would look like routes/products/edit/index. The homepage is in the routes/index folder.</li>
+            <li>services: These are your http calls to your server and any other external systems you might need to hook up to. Services have classic REST commands as well as a few others which is documented fully elsewhere.</li>
+            <li>theme: Where your header, footer, layout, and styles are all grouped. Sass styles are all in theme/styles so put all your custom layouting design in this heer place.</li>
+        </ul>
+
+        <p>Concepts are boring so, let’s edit the things!</p>
+    </section>
+
+
+    <section layout="row">
+        <md-button ui-sref="app.overview.getting-started.setup"><i class="fa fa-arrow-left"></i> Setup</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.route-setup">Route Setup <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>

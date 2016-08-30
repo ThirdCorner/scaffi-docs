@@ -1,0 +1,134 @@
+{
+  "app": [
+    {
+      "id": "index",
+      "displayText": "Index",
+      "sref": "app.index",
+      "isDisplayable": false,
+      "icon": "",
+      "routes": []
+    },
+    {
+      "id": "overview",
+      "displayText": "Overview",
+      "sref": "app.overview",
+      "isDisplayable": true,
+      "icon": "",
+      "routes": [
+        {
+          "id": "installation",
+          "displayText": "Installation",
+          "sref": "app.overview.installation",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": []
+        },
+        {
+          "id": "getting-started",
+          "displayText": "Getting Started",
+          "sref": "app.overview.getting-started",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "installation",
+              "displayText": "Installation",
+              "sref": "app.overview.getting-started.installation",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "setup",
+              "displayText": "Setup",
+              "sref": "app.overview.getting-started.setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "project-setup",
+              "displayText": "Project Setup",
+              "sref": "app.overview.getting-started.project-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "route-setup",
+              "displayText": "Route Setup",
+              "sref": "app.overview.getting-started.route-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "fixture-setup",
+              "displayText": "Fixture Setup",
+              "sref": "app.overview.getting-started.fixture-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "editing-fixtures",
+              "displayText": "Editing Fixtures",
+              "sref": "app.overview.getting-started.editing-fixtures",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "server-setup",
+              "displayText": "Server Setup",
+              "sref": "app.overview.getting-started.server-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "server-table-setup",
+              "displayText": "Server Table Setup",
+              "sref": "app.overview.getting-started.server-table-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "server-crud-setup",
+              "displayText": "Server Crud Setup",
+              "sref": "app.overview.getting-started.server-crud-setup",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "conclusion",
+              "displayText": "Conclusion",
+              "sref": "app.overview.getting-started.conclusion",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "displayText": "Ui",
+      "sref": "app.ui",
+      "isDisplayable": true,
+      "icon": "",
+      "routes": []
+    },
+    {
+      "id": "server",
+      "displayText": "Server",
+      "sref": "app.server",
+      "isDisplayable": true,
+      "icon": "",
+      "routes": []
+    }
+  ]
+}

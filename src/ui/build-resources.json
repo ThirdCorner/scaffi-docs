@@ -1,0 +1,7 @@
+{
+  "styles": [
+    "bower-material*/angular-material.css",
+    "angular-loading*/build/loading-bar.min.css",
+    "font-awesome"
+  ]
+}
