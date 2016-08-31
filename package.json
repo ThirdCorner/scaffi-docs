@@ -1,0 +1,27 @@
+{
+  "name": "scaffi-docs",
+  "version": "1.0.0",
+  "description": "Scaffi Docs Repo",
+  "main": "index.js",
+  "scripts": {
+    "yo": "yo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThirdCorner/scaffi-docs.git"
+  },
+  "keywords": [
+    "scaffi",
+    "scaffi-docs"
+  ],
+  "author": "JJ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThirdCorner/scaffi-docs/issues"
+  },
+  "homepage": "https://github.com/ThirdCorner/scaffi-docs#readme",
+  "devDependencies": {
+    "generator-scaffi": "github:thirdcorner/generator-scaffi#develop",
+    "yo": "^1.8.4"
+  }
+}
