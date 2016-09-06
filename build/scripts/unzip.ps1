@@ -1,1 +1,1 @@
-Expand-Archive -Path \upload\302.zip -DestinationPath \site\wwwroot -Force;
+Expand-Archive -Path D:\home\upload\302.zip -DestinationPath D:\home\site\wwwroot -Force;
