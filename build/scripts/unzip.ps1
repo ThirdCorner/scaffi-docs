@@ -1,1 +1,9 @@
-Expand-Archive -Path D:\home\upload\302.zip -DestinationPath D:\home\site\wwwroot -Force;
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+function Unzip
+{
+    param([string]$zipfile, [string]$outpath)
+
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+}
+
+Unzip "D:\home\upload\302.zip" "D:\home\site\wwwroot"
