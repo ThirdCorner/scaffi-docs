@@ -1,0 +1,29 @@
+<div class="route route-ui.yo-scaffi.mode">
+    <section>
+        <h1>yo scaffi:mode</h1>
+        <p>Call this when you want to set the environment for both UI and Server.</p>
+    </section>
+    <section>
+        <h2>Environments</h2>
+        <ul class="list">
+            <li>
+                <label>Prototype</label><span>Used by the UI to intercept all requests to the server and redirect to in-memory storage. This lets you store all data in memory and prototype out your site without having to worry about a backend.</span>
+            </li>
+            <li>
+                <label>Localhost</label><span>Used for defining when you’re developing locally. You can use this mode to return mock data for an API if you don’t want to deal with the connection hassel.</span>
+            </li>
+            <li>
+                <label>CI</label><span>The mode to set when you’re running your environment under continuous integration development.</span>
+            </li>
+            <li>
+                <label>Development</label><span>A good mode to use when you need to test implementation on the actual accessible server.</span>
+            </li>
+            <li>
+                <label>QA</label><span>A good mode to use when you’re having other people run through features on a like-production esque server.</span>
+            </li>
+            <li>
+                <label>Production</label><span>The mode to set when you’re running your code in a live environment.</span>
+            </li>
+        </ul>
+    </section>
+</div>

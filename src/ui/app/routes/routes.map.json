@@ -96,7 +96,97 @@
       "sref": "app.ui",
       "isDisplayable": true,
       "icon": "",
-      "routes": []
+      "routes": [
+        {
+          "id": "yo-scaffi",
+          "displayText": "Yo Scaffi",
+          "sref": "app.ui.yo-scaffi",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "component",
+              "displayText": "Component",
+              "sref": "app.ui.yo-scaffi.component",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "directive",
+              "displayText": "Directive",
+              "sref": "app.ui.yo-scaffi.directive",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "mode",
+              "displayText": "Mode",
+              "sref": "app.ui.yo-scaffi.mode",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "route",
+              "displayText": "Route",
+              "sref": "app.ui.yo-scaffi.route",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "page",
+              "displayText": "Page",
+              "sref": "app.ui.yo-scaffi.page",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "service",
+              "displayText": "Service",
+              "sref": "app.ui.yo-scaffi.service",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "stub",
+              "displayText": "Stub",
+              "sref": "app.ui.yo-scaffi.stub",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "start",
+              "displayText": "Start",
+              "sref": "app.ui.yo-scaffi.start",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "factory",
+              "displayText": "Factory",
+              "sref": "app.ui.yo-scaffi.factory",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "theme",
+              "displayText": "Theme",
+              "sref": "app.ui.yo-scaffi.theme",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "server",
@@ -104,7 +194,33 @@
       "sref": "app.server",
       "isDisplayable": true,
       "icon": "",
-      "routes": []
+      "routes": [
+        {
+          "id": "yo-scaffi",
+          "displayText": "Yo Scaffi",
+          "sref": "app.server.yo-scaffi",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "component",
+              "displayText": "Component",
+              "sref": "app.server.yo-scaffi.component",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "service",
+              "displayText": "Service",
+              "sref": "app.server.yo-scaffi.service",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }

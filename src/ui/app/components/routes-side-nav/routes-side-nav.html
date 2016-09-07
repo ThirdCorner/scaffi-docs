@@ -6,7 +6,7 @@
                 <ul class="link-list">
                     <li ng-repeat="child in route.routes" ng-if="child.isDisplayable">
                         <div class="route-link"><i class="fa" ng-class="{'fa-caret-right': child.sref == vm.selectedRoute}"></i><a ui-sref="{{child.sref}}">{{child.displayText}}</a></div>
-                        <div class="route-children">
+                        <div class="route-children" ng-if="vm.isParentSelected(child.sref)">
                             <ul class="link-list">
                                 <li ng-repeat="secondchild in child.routes" ng-if="secondchild.isDisplayable">
                                     <div class="route-link"><i class="fa" ng-class="{'fa-caret-right': secondchild.sref == vm.selectedRoute}"></i><a ui-sref="{{secondchild.sref}}">{{secondchild.displayText}}</a></div>

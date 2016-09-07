@@ -17,7 +17,9 @@ class Header {
 		this.$state = $state;
 		this.$location = $location;
 	}
-	
+	goHome() {
+		this.$location.path('/');
+	}
 }
 
 export default Header;

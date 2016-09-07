@@ -85,3 +85,5 @@ npm-shrinkwrap.json
 /src/iis/**/bin/
 
 /node_modules
+
+/build/web/server/*

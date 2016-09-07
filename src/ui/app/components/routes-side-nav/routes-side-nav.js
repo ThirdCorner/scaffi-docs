@@ -37,8 +37,8 @@ class RoutesSideNav {
 		})
 
 	}
-	goHome() {
-		this.$location.path('/');
+	isParentSelected(sref) {
+		return this.selectedRoute.indexOf(sref) !== -1;
 	}
 	setActiveState(route, params) {
 		this.setDisplayable(route);
