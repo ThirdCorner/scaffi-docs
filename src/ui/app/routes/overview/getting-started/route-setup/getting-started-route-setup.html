@@ -1,7 +1,7 @@
 <div class="route route-overview.getting-started.route-setup">
     <section>
         <h1>Page Setup</h1>
-        <p>We’re going to make a simple list / form section so you can get an idea of how cool prototype mode is. Kill your "npm start" process if you haven’t already  (ctrl + c) and let’s run some generators:</p>
+        <p>We’re going to make a simple list / form section so you can get an idea of how cool prototype mode is. Kill your "yo scaffi:start" process if you haven’t already  (ctrl + c) and let’s run some generators:</p>
         <p class="command">yo scaffi:service</p>
 
         <ul class="list">
@@ -29,15 +29,15 @@
         <pre>
             <code class="html" template="vm.getSampleOne()"></code>
         </pre>
-        <pre>
+        <pre> 
             <code class="html" template="vm.getSampleTwo()"></code>
         </pre>
 
-        <p>Now let’s run ‘npm start’, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
-        <img src="/resources/images/getting-started-project-2nd.png" />
+        <p>Now let’s run ‘yo scaffi:start ui’, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
+        <img src="/images/getting-started-project-2nd.png" />
 
         <p>If you click the link, it should take you to http://localhost:5010/products and look like so:</p>
-        <img src="/resources/images/getting-started-project-3rd.png" />
+        <img src="/images/getting-started-project-3rd.png" />
 
         <p>What this illustrates is that when you generate routes and pages with yo scaffi, the generators are handling ui-router setup for you. No more messing with confusing route setups, it’s all baked into the app structure. If you look in the routes/products/products.route.js, you can see that any call to “app.products” redirects to “app.products.index”, which is in the products/index/products-index.page.js controller. All ui-router routes start with “app.” so if you end up generating a series of routes where the url looks like products/overview/protected/edit, you can assume that the framework has added a ui-router call of app.products.overview.protected.edit that you can reference in your code with 100% surety. </p>
 
@@ -64,7 +64,7 @@
 
         <p>If you remember with angular, if you set a variable to this.variable in the controller, in the template, it comes out as vm.variable. That’s why we have “this.products = products” in the constructor, but in our actual template, it comes out as “item in vm.products” in our ng-repeat. If you save these files and go back to your page, it should look like this:</p>
 
-        <img src="/resources/images/getting-started-project-4th.png" />
+        <img src="/images/getting-started-project-4th.png" />
 
         <p>We don’t have any data yet, but this should show off some of the ng-if logic happening in the template. If we were not in prototype mode, we would be getting an error from a failed network request.</p>
 

@@ -15,7 +15,7 @@ const PARAMS = {
 // export-params-end
 
 //start-non-standard
-@RouteConfig(ROUTE, PARAMS)
+@RouteConfig(ROUTE, PARAMS)  
 //end-non-standard
 class Overview {}
 

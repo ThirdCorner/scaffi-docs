@@ -27,14 +27,14 @@
         <p class="command">yo scaffi:mode</p>
 
         <p>This command is for switching between various environment modes (production, qa, development, prototype, localhost). Everything but prototype mode expects a backend service to talk to. For now, hit enter and select Prototype, and hit enter again.</p>
-        <p>To start the UI, in your CMD window, change into “src\ui” and run:</p>
+        <p>To start the UI, in your CMD window, run the following:</p>
 
-        <p class="command">npm start</p>
+        <p class="command">yo scaffi:start ui</p>
 
         <p>If all was good with your setup, this will start some gulp processes. Give it a minute and it’ll launch a browser tab going to <a href="http://localhost:5010">http://localhost:5010</a>. It should look like this, unless we’ve added a theme to the generators: </p>
-        <img src="/resources/images/getting-started-project-1st.png" />
+        <img src="/images/getting-started-project-1st.png" />
 
-        <p class="alert">Whenever you run the app in the browser, make sure to open the console window in Chrome. We have browserify watching for changes, so as long as you have the console open, you can make changes and the page will auto-refresh. If however, you make changes and then start up npm start, you want to make sure your console is open and then refresh the page. This will get a fresh copy of your changes. So remember, if you end up wondering “Where the hecks the changes I just made”, make sure your console is open, caching is disabled in network tab in chrome, and you’ve manually refreshed for the first time.</p>
+        <p class="alert">Whenever you run the app in the browser, make sure to open the console window in Chrome. We have browserify watching for changes, so as long as you have the console open, you can make changes and the page will auto-refresh. If however, you make changes and then start up yo scaffi:start ui, you want to make sure your console is open and then refresh the page. This will get a fresh copy of your changes. So remember, if you end up wondering “Where the hecks the changes I just made”, make sure your console is open, caching is disabled in network tab in chrome, and you’ve manually refreshed for the first time.</p>
 
         <p>Congrats, you now have a fully scaffolded template project to edit to your hearts content. Let’s dig into this whole prototype mode thingymajigger.</p>
 

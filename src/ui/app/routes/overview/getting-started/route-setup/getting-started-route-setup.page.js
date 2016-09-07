@@ -27,20 +27,10 @@ class GettingStartedRouteSetup extends AbstractPage {
 		
 		this.$state = $state;
 		this.$scope = $scope;
-		
-		$scope.productIndexHtml = `
-		<div class="route route-products.index">
-	        <md-toolbar layout="row" class="md-primary">
-	            <div class="md-toolbar-tools">
-	                <span>Products</span>
-	            </div>
-	        </md-toolbar>
-	    </div>
-		`;
 	
 	}
 	getSampleOne(){
-		return `
+		return ` 
 	<div class="route route-products.index">
         <md-toolbar layout="row" class="md-primary">
             <div class="md-toolbar-tools">

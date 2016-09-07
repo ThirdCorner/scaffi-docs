@@ -37,6 +37,9 @@ class RoutesSideNav {
 		})
 
 	}
+	goHome() {
+		this.$location.path('/');
+	}
 	setActiveState(route, params) {
 		this.setDisplayable(route);
 

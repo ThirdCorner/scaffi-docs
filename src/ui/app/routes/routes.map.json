@@ -31,14 +31,6 @@
           "icon": "",
           "routes": [
             {
-              "id": "installation",
-              "displayText": "Installation",
-              "sref": "app.overview.getting-started.installation",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
               "id": "setup",
               "displayText": "Setup",
               "sref": "app.overview.getting-started.setup",
@@ -82,22 +74,6 @@
               "id": "server-setup",
               "displayText": "Server Setup",
               "sref": "app.overview.getting-started.server-setup",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "server-table-setup",
-              "displayText": "Server Table Setup",
-              "sref": "app.overview.getting-started.server-table-setup",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "server-crud-setup",
-              "displayText": "Server Crud Setup",
-              "sref": "app.overview.getting-started.server-crud-setup",
               "isDisplayable": true,
               "icon": "",
               "routes": []

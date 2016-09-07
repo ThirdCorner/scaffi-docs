@@ -40,14 +40,14 @@
         <p class="alert">!!! Because of the hassle of singular and plural table name mutation, in Scaffi, we freeze the table names so that we don’t have to deal with mutation in the name. So when you’re making tables, either go with singular or plural and stick with it in the UI and Server. We did “Products” in the UI so this table schema will reference the Products table. !!!</p>
 
         <p>With all those changes made, in a CMD window, you should be able to browse to src/server and run the command:</p>
-        <p class="command">npm start</p>
+        <p class="command">yo scaffi:start server</p>
         <p>If everything’s connected properly, you should see an output of:</p>
 
-        <img src="/resources/images/getting-started-server-1st.png" />
+        <img src="/images/getting-started-server-1st.png" />
 
         <p>You should be able to browse to it in chrome and get the following:</p>
 
-        <img src="/resources/images/getting-started-server-2nd.png" />
+        <img src="/images/getting-started-server-2nd.png" />
 
         <p>If you're getting a sequelize error, go here because you need to configure a few more things: </p>
 
@@ -59,40 +59,37 @@
 
         <pre><code class="javascript" template="vm.getSampleData5()"></code></pre>
 
-        <p>This sets up a classic REST route that the UI expects to be there. Go ahead and kill your npm process and then run npm start on the server again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
+        <p>This sets up a classic REST route that the UI expects to be there. Go ahead and kill your npm process and then run 'yo scaffi:start server' on the server again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
 
-        <img src="/resources/images/getting-started-server-3rd.png" />
+        <img src="/images/getting-started-server-3rd.png" />
 
         <p>There’s no data in the database currently so this is expected.</p>
     </section>
     <section>
         <h2>UI =&gt; Server =&gt; Database</h2>
         <p>Now’s the moment of truth: does the UI hook up to the DB and back like it should? Let’s test it out.</p>
-        <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run "npm start". When a new page opens in your browser, remember to open the console and refresh the page. If we click the "Go to Products" link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to /api/products.</p>
+        <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run "yo scaffi:start ui". When a new page opens in your browser, remember to open the console and refresh the page. If we click the "Go to Products" link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to /api/products.</p>
 
-        <img src="/resources/images/getting-started-server-4th.png" />
+        <img src="/images/getting-started-server-4th.png" />
 
         <p>This means it’s talking to that API Epilogue route that we just set up. Click “Add a product”, put in some data and let’s see if POSTs work. Once it goes back to the products page, we can see that our item was added.</p>
 
-        <img src="/resources/images/getting-started-server-5th.png" />
+        <img src="/images/getting-started-server-5th.png" />
 
         <p>If we look at the database, we should have a row of data:</p>
 
-        <img src="/resources/images/getting-started-server-6th.png" />
+        <img src="/images/getting-started-server-6th.png" />
 
         <p>One last thing to check is if our PUT route works. If we click on the item we just made, change and submit, we see that PUTs are hooked up as well:</p>
 
-        <img src="/resources/images/getting-started-server-7th.png" />
+        <img src="/images/getting-started-server-7th.png" />
 
         <p>And that’s it. Integration is successfully setup from UI to Database and back, all without having to change anything in the UI to make it work.</p>
         <p>Hopefully you can see how powerful it is developing in prototype mode.</p>
     </section>
-    <section>
-        <h2>Conclusion</h2>
-        <p>By going through this tutorial, you should now be capable of building a fully functioning SPA app in Node and Angular using Scaffi.</p>
-        <p>Go forth and do awesome.</p>
-    </section>
     <section layout="row">
         <md-button ui-sref="app.overview.getting-started.editing-fixtures"><i class="fa fa-arrow-left"></i> Manipulate Fixtures</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.conclusion">Conclusion <i class="fa fa-arrow-right"></i></md-button>
     </section>
 </div>

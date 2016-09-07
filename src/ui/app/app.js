@@ -48,8 +48,9 @@ mainModule.requires = mainModule.requires.concat(requires);
  If you need to run something in angular
  */
 
-/*
- mainModule.run((ngTableDefaults) =>{
- 
+
+ mainModule.run(($rootScope) =>{
+	 $rootScope.$on('$stateChangeSuccess', function() {
+		 document.body.scrollTop = document.documentElement.scrollTop = 0;
+	 });
  });
- */
