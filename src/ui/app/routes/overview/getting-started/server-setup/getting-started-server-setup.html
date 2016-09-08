@@ -4,42 +4,45 @@
         <p>For the sake of this tutorial, let’s assume we’ve met our requirements: Grouping of products of active vs complete and the ability to add and edit them.</p>
         <p>Before we start this, make sure you have:</p>
         <ul class="list">
-            <li>Localhost sql instance to connect to</li>
-            <li>Have admin read/write creds attached to a DB called RockingForm</li>
+            <li>A localhost sql instance to connect to</li>
+            <li>Have admin read/write creds attached to a DB called <span class="code">RockingForm</span></li>
         </ul>
 
         <p>For streamlining connections from UI to Database, we’re using Sequelize (<a href="http://docs.sequelizejs.com/en/latest/">http://docs.sequelizejs.com/en/latest/</a>) which comes with some spiffy packages to make integration easy-peasy.</p>
         <p>First and foremost, let’s switch out of prototype mode:</p>
         <p class="command">yo scaffi:mode</p>
         <p>Be sure to select <b>localhost</b> as the new mode to work in.</p>
-        <p>Before we start things up, open up "/src/server/scaffi-server.json". Since we’re connecting to sql, make the components object look like so:</p>
+        <p>Before we start things up, open up <span class="code">/rocking-form/src/server/scaffi-server.json</span>. Since we’re connecting to sql, make the components object look like so:</p>
 
         <code-example type="json" code="vm.getSampleData1()"></code-example>
 
         <p>This tells sequelize that we’re connecting to mssql, and that we’re using epilogue as an add-on, which we’ll get into later.</p>
-        <p>In "/src/server/scaffi-server.private.json", replace with the following:</p>
+        <p>In <span class="code">/rocking-form/src/server/scaffi-server.private.json</span>, replace with the following:</p>
 
         <code-example type="json" code="vm.getSampleData2()"></code-example>
 
-        <p>If you’re not using sqlexpress, take out the line with the instance. Otherwise, fill in the username and password with whatever account you have attached to the RockingForm DB.</p>
+        <p>If you’re not using <span class="code">sqlexpress</span>, take out the line with the instance. Otherwise, fill in the username and password with whatever account you have attached to the RockingForm DB.</p>
 
     </section>
     <section>
         <h2>Add a Table Schema</h2>
         <p>One last thing we want to do is add a products model that our UI is setup to manipulate.</p>
-        <p>If you remember, we have a fixture in products-service.fixture.js on the UI side that looks like this:</p>
+        <p>If you remember, we have a fixture in <span class="code">products-service.fixture.js</span> on the UI side that looks like this:</p>
 
         <code-example type="json" code="vm.getSampleData3()"></code-example>
 
-        <p>In "/src/server/models", make a JS file called "Products.js" (Name needs to match whatever table name it’s going to be in the exact casing). Paste the following:</p>
+        <p>In <span class="code">/rocking-form/src/server/models</span>, make a JS file called <span class="code">Products.js</span> (Name needs to match whatever table name it’s going to be in the exact casing). If you don't have a <span class="code">models</span> folder, make that as well. Paste the following in the js file:</p>
 
         <code-example type="javascript" code="vm.getSampleData4()"></code-example>
 
-        <p>This is Sequelize's syntax for table schemas. Having the fixture in the UI makes it really easy to construct the table schema that the server will use. If you haven’t already, go into your DB and add this table schema to the actual database. </p>
+        <p>This is Sequelize's syntax for table schemas. Having the fixture in the UI makes it really easy to construct the table schema that the server will use. </p>
+        <p class="alert">!!! Because of the hassle of singular and plural table name mutation, in Scaffi, we freeze the table names so that we don’t have to deal with mutation in the name. So when you’re making tables, either go with singular or plural and stick with it in the UI and Server. We did <span class="code">Products</span> in the UI so this table schema will reference the Products table. !!!</p>
+        <p>If you haven’t already, go into your DB and add this table schema to the actual database.</p>
 
-        <p class="alert">!!! Because of the hassle of singular and plural table name mutation, in Scaffi, we freeze the table names so that we don’t have to deal with mutation in the name. So when you’re making tables, either go with singular or plural and stick with it in the UI and Server. We did “Products” in the UI so this table schema will reference the Products table. !!!</p>
+        <code-example type="sql" code="vm.getSampleSql()"></code-example>
 
-        <p>With all those changes made, in a CMD window, you should be able to browse to src/server and run the command:</p>
+
+        <p>With all those changes made, in a CMD window, you should be able to run the command:</p>
         <p class="command">yo scaffi:start server</p>
         <p>If everything’s connected properly, you should see an output of:</p>
 
@@ -49,17 +52,20 @@
 
         <img src="/images/getting-started-server-2nd.png" />
 
-        <p>If you're getting a sequelize error, go here because you need to configure a few more things: </p>
+        <p>If you're getting a sequelize error, you need to configure a few things: <a ui-sref="app.troubleshooting.sequelize.connection()">Troubleshooting Sequelize Connections</a> </p>
 
     </section>
     <section>
         <h2>Add a CRUD Route</h2>
-        <p>We have our server talking with the database, now we need the server to set up a CRUD route for the UI’s products-service.service to use to talk to the database. With Sequelize comes Epilogue (<a href="https://github.com/dchester/epilogue">https://github.com/dchester/epilogue</a>). </p>
-        <p>In "/src/server/routes" add a folder called "epilogue" if not there already. In that folder, create a JS file called "products.js" and paste the following:</p>
+        <p>We have our server talking with the database, now we need the server to set up a CRUD route for the UI’s <span class="code">products-service.service.js</span> to use to talk to the database. With Sequelize comes Epilogue (<a href="https://github.com/dchester/epilogue">https://github.com/dchester/epilogue</a>). </p>
+        <p>In <span class="code">/rocking-form/src/server/scaffi-server.json</span>, change the <span class="code">components</span> portion to this:</p>
+        <code-example type="json" code="vm.getSampleData6()"></code-example>
+
+        <p>When you do, the server should restart and give you an error about missing a directory. So, in <span class="code">/rocking-form/src/server/routes</span>, add a folder called <span class="code">epilogue</span> if not there already. In that folder, create a JS file called <span class="code">products.js</span> and paste the following:</p>
 
         <code-example type="javascript" code="vm.getSampleData5()"></code-example>
 
-        <p>This sets up a classic REST route that the UI expects to be there. Go ahead and kill your npm process and then run 'yo scaffi:start server' on the server again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
+        <p>This sets up a classic CRUD route that the UI expects to be there. When the server restarts, it should say <span class="code">DB CONNECTED</span> again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
 
         <img src="/images/getting-started-server-3rd.png" />
 
@@ -67,12 +73,12 @@
     </section>
     <section>
         <h2>UI =&gt; Server =&gt; Database</h2>
-        <p>Now’s the moment of truth: does the UI hook up to the DB and back like it should? Let’s test it out.</p>
-        <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run "yo scaffi:start ui". When a new page opens in your browser, remember to open the console and refresh the page. If we click the "Go to Products" link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to /api/products.</p>
+        <p>Now’s the moment of truth: does the UI hook up to the DB and back like it should? Let’s test it out. Remember, we already switched out of prototype mode, so when we start the UI, it's going to be looking for a server now.</p>
+        <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run <span class="code">yo scaffi:start ui</span>. When a new page opens in your browser, remember to open the console and refresh the page. If we click the <span class="code">Go to Products</span> link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to <span class="code">/api/products</span>.</p>
 
         <img src="/images/getting-started-server-4th.png" />
 
-        <p>This means it’s talking to that API Epilogue route that we just set up. Click “Add a product”, put in some data and let’s see if POSTs work. Once it goes back to the products page, we can see that our item was added.</p>
+        <p>This means it’s talking to that API Epilogue route that we just set up. Click <span class="code">Add a product</span>, put in some data and let’s see if POSTs work. Once it goes back to the products page, we can see that our item was added.</p>
 
         <img src="/images/getting-started-server-5th.png" />
 
@@ -80,7 +86,7 @@
 
         <img src="/images/getting-started-server-6th.png" />
 
-        <p>One last thing to check is if our PUT route works. If we click on the item we just made, change and submit, we see that PUTs are hooked up as well:</p>
+        <p>One last thing to check is if our PUT route works. If we click on the item we just made, change some data and submit, we see that PUTs are hooked up as well:</p>
 
         <img src="/images/getting-started-server-7th.png" />
 

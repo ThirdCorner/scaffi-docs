@@ -43,12 +43,21 @@ class GettingStartedFixtureSetup extends AbstractPage {
 	}
 	getSampleData2(){
 		return `
-	{
-		id: 2,
-		Name: "Mindy Rock",
-		Description: "The rock then mends your mindminds",
-		IsComplete: true
-	}
+	"COLLECTION": [
+
+		{
+			id: 1,
+			Name: "SlingSling",
+			Description: "It slings, it dings, it ringarings",
+			IsComplete: false
+		},
+		{
+			id: 2,
+			Name: "Mindy Rock",
+			Description: "The rock then mends your mindminds",
+			IsComplete: true
+		}
+	]
 		`
 	}
 

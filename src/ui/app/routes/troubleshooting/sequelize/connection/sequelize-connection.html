@@ -1,0 +1,22 @@
+<div class="route route-troubleshooting.sequelize.connection">
+    <section>
+        <h1>Troubleshooting Sequelize Connection Issues</h1>
+    </section>
+    <section>
+        <h2>Cannot connect to localhost:undefined</h2>
+        <p>If you see something like this, you need to do a bit of extra configuring.</p>
+
+        <p>In Sql Management Studio 2014 for localhost, you want to make sure the server name is something like: <span class="code">localhost\sqlexpress</span></p>
+        <p class="alert">!!! If you use (LocalDB)\mssqllocaldb, you’re gonna have a bad time. !!!</p>
+
+        <p>In <span class="code">Administration/Services</span>, make sure you have a <span class="code">SQL Server(SQLEXPRESS)</span> and <span class="code">SQL Server Browser</span> services running. If not, you need to reinstall <a href="https://www.microsoft.com/en-us/download/details.aspx?id=42299">SQLEXPR_x64_ENU.exe</a> with <span class="code">LocalDB</span>. Just install all the options. </p>
+
+        <img src="/images/trouble-sequelize-connection-01.png" />
+
+        <p>In Sql Server Configuration Manager, make sure your stuff looks something like this:</p>
+
+        <img src="/images/trouble-sequelize-connection-02.png" />
+        <img src="/images/trouble-sequelize-connection-03.png" />
+        <img src="/images/trouble-sequelize-connection-04.png" />
+    </section>
+</div>

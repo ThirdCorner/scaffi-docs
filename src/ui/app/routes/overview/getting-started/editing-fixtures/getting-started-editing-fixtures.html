@@ -3,17 +3,18 @@
         <h1>Manipulate Fixtures</h1>
 
         <p>If fixtures are just a mockup of server requests, we should theoretically be able to submit changes to those fixtures. Theoretically, right?</p>
-        <p>Stop your npm process and let’s add a page to our products route:</p>
+        <p>Stop your <span class="code">yo scaffi</span> process and let’s add a page to our products route:</p>
         <p class="command">yo scaffi:page</p>
 
         <ul class="list">
-            <li>Say "products" for the Route Path</li>
-            <li>Select the form option because we want to edit and submit data</li>
-            <li>Hit space on both edit and add and hit enter. We’re telling Scaffi that this form will add and edit server data</li>
-            <li>Say "ProductsService" for the service, since that’s where we’re making our server calls from. Make sure you put ProductsService with the small 's' in there, otherwise you’ll get an injection error because ProductService does not exist.</li>
+            <li>Type <span class="code">form</span> for the page name</li>
+            <li>Type <span class="code">products</span> for the Route Path</li>
+            <li>Arrow down to the <span class="code">form</span> option and hit enter</li>
+            <li>Hit space on both <span class="code">edit</span> and <span class="code">add</span> and hit enter. We’re telling Scaffi that this form will add and edit server data</li>
+            <li>Say <span class="code">ProductsService</span> for the service, since that’s where we’re making our server calls from. Make sure you put <span class="code">ProductsService</span> with the small <span class="code">s</span> in there, otherwise you’ll get an injection error because ProductService does not exist.</li>
         </ul>
 
-        <p>In your IDE, if you take a look at /src/ui/app/routes/products, we now have a folder called form. You’d expect the url then to equate to "localhost:5010/products/form", right? The page generator for form is specially set up to give us several routes "/products/add" and "/products/:id/edit" which should look very familiar if you’re used to classic REST setups. You can see these if you look at the products-form.page.js page:</p>
+        <p>In your IDE, if you take a look at <span class="code">/rocking-form/src/ui/app/routes/products</span>; we now have a folder called <span class="code">form</span>. You’d expect the url then to equate to <span class="code">localhost:5010/products/form</span>, right? The page generator for <span class="code">form</span> is specially set up to give us several route: <span class="code">/products/add</span> and <span class="code">/products/:ProductsServiceID/edit</span>. These should look very familiar if you’re used to classic REST setups. You can see these if you look at the <span class="code">products-form.page.js</span> page:</p>
         <p>
             <b>Edit Route Portion</b><br>
             'app.products.edit'<br>
@@ -24,20 +25,20 @@
             'app.products.add'<br>
             url: '/add',
         </p>
-        <p>In the /src/ui/app/routes/products/form/products-form.html page, replace it with the following:</p>
+        <p>In the <span class="code">/rocking-form/src/ui/app/routes/products/form/products-form.html</span> page, replace it with the following:</p>
 
         <code-example type="html" code="vm.getSampleData1()"></code-example>
 
         <p>This is a simple form, matching the properties in our fixture so that we can edit them.</p>
-        <p>One last change we need to do is in /src/ui/app/routers/products/index/products-index.html.</p>
-        <p>Change any instance of ng-click="null" to the following:</p>
+        <p>One last change we need to do is in <span class="code">/rocking-form/src/ui/app/routers/products/index/products-index.html</span>.</p>
+        <p>Change any instance of <span class="code">ng-click="null"</span> to the following:</p>
 
 
         <code-example code="vm.getSampleData2()"></code-example>
 
         <p>This will let the list items go to the form in an editable state.</p>
-        <p>Go ahead and run ‘yo scaffi:start ui’ again and refresh your page.</p>
-        <p>Nothing should look different, except when you click on SlingSling, it should bring you to the following page:</p>
+        <p>Go ahead and run <span class="code">yo scaffi:start ui</span> again and in the page you have the console open, refresh your page.</p>
+        <p>Nothing should look different, except when you click on <span class="code">SlingSling</span>; it should bring you to the following page:</p>
 
         <img src="/images/getting-started-manipulate-fixtures-1st.png" />
 
@@ -54,14 +55,14 @@
         <img src="/images/getting-started-manipulate-fixtures-2nd.png" />
 
         <p>As you can see, we submitted data, changed page states and it propagated as if we had a server attached. If we hooked this up to a server with a matching schema to our fixture, we wouldn’t need to change any code. </p>
-        <p>Let’s do an add state. In /src/ui/app/routes/products/index/products-index.html, after the first md-content tag, add a link:</p>
+        <p>Let’s do an add state. In <span class="code">/rocking-form/src/ui/app/routes/products/index/products-index.html</span>, after the first md-content tag, add a link:</p>
 
         <code-example type="html" code="vm.getSampleData3()"></code-example>
 
         <img src="/images/getting-started-manipulate-fixtures-3rd.png" />
 
         <p class="alert">!!! Once your page auto-refreshes, you’ll notice our data has “reset”: one active item and one completed item. That’s because fixture data is stored in browser memory. Fixture changes only propagate through state changes in ui-router. Once you refresh, the state is back to the beginning. So if you need to test with a certain data setup, you’ll want to do so in the fixture files so that when you make code changes, it puts you back to where you need to start when you’re troubleshooting something. !!!</p>
-        <p>Now we have our link “Add a product” right under our “Products” header.</p>
+        <p>Now we have our link <span class="code">Add a product</span> right under our <span class="code">Products</span> header.</p>
 
         <img src="/images/getting-started-manipulate-fixtures-4th.png" />
 
@@ -70,6 +71,7 @@
         <img src="/images/getting-started-manipulate-fixtures-5th.png" />
 
         <p>That’s the gist of prototype mode. You can bake in all your front-end logic, hook things up via REST as if you were working with a server and get through most all your functional requirements. Then, when everything is solidified, you can move on to configuring the server portion.</p>
+        <p>We'll be doing the server portion next.</p>
     </section>
     <section layout="row">
         <md-button ui-sref="app.overview.getting-started.fixture-setup"><i class="fa fa-arrow-left"></i> Fixture Setup</md-button>

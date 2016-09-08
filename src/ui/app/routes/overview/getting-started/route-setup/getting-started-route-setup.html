@@ -27,40 +27,41 @@
         <p>Open the <span class="code">products-index.html</span> page and paste this in:</p>
 
         <code-example type="html" code="vm.getSampleOne()"></code-example>
+        <p>In <span class="code">rocking-form/src/ui/routes/index/index.html</span>, paste the following:</p>
         <code-example type="html" code="vm.getSampleTwo()"></code-example>
 
-        <p>Now let’s run ‘yo scaffi:start ui’, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
+        <p>Now let’s run <span class="code">yo scaffi:start ui</span>, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
         <img src="/images/getting-started-project-2nd.png" />
 
-        <p>If you click the link, it should take you to http://localhost:5010/products and look like so:</p>
+        <p>If you click the link, it should take you to <span class="code">http://localhost:5010/products/</span> and look like so:</p>
         <img src="/images/getting-started-project-3rd.png" />
 
-        <p>What this illustrates is that when you generate routes and pages with yo scaffi, the generators are handling ui-router setup for you. No more messing with confusing route setups, it’s all baked into the app structure. If you look in the routes/products/products.route.js, you can see that any call to “app.products” redirects to “app.products.index”, which is in the products/index/products-index.page.js controller. All ui-router routes start with “app.” so if you end up generating a series of routes where the url looks like products/overview/protected/edit, you can assume that the framework has added a ui-router call of app.products.overview.protected.edit that you can reference in your code with 100% surety. </p>
+        <p>What this illustrates is that when you generate routes and pages with <span class="code">yo scaffi</span>, the generators are handling <a href="https://github.com/angular-ui/ui-router/wiki">ui-router</a> setup for you. No more messing with confusing route setups; it’s all baked into the app structure. If you look in the <span class="code">routes/products/products.route.js</span>, you can see that any call to <span class="code">app.products</span> redirects to <span class="code">app.products.index</span>, which is in the <span class="code">products/index/products-index.page.js</span> controller. All ui-router routes start with <span class="code">app.</span> so if you end up generating a series of routes where the url looks like <span class="code">products/overview/protected/edit</span>, you can assume that the framework has added a ui-router call of <span class="code">app.products.overview.protected.edit</span> that you can reference in your code with 100% certainty. </p>
 
         <p>This is nice and spiffy, but this isn’t why we’re in prototype mode. </p>
 
-        <p>In your products/index/products-index.html page (in Webstorm you can type CTRL+SHIFT+n to access the page really easy), change the html to this:</p>
+        <p>In your <span class="code">products/index/products-index.html</span> template, change the html to this:</p>
 
         <code-example type="html" code="vm.getSampleThree()"></code-example>
 
-        <p>A quick overview of this page is we have two sections that ng-repeats through an array called “products” that the controller page is providing. It filters based on if the product item has an IsComplete boolean of true or false with some added material flexbox goodness.</p>
-        <p>In products/index/products-index.page.js, replace the contents with this:</p>
+        <p>A quick overview of this page: we have two sections that ng-repeats through an array called <span class="code">products</span> that the controller for this template is providing. It filters based on if the product item has an IsComplete boolean of true or false. As well, there's some added material flexbox goodness.</p>
+        <p>In <span class="code">products/index/products-index.page.js</span>, replace the contents with this:</p>
 
         <code-example type="javascript" code="vm.getSampleFour()"></code-example>
 
-        <p>To give a high level view of this page, we’re importing stuff from Scaffi core and bringing in lodash. The ROUTE and PARAMS const that feed into @RouteConfig are what tell ui-router where to put this page in the router loading process.</p>
+        <p>To give a high level view of this page, we’re importing stuff from Scaffi core and bringing in lodash. The <span class="code">ROUTE</span> and <span class="code">PARAMS</span> const that feed into <span class="code">@RouteConfig</span> are what tell ui-router where to put this page in the router loading process.</p>
 
-        <p>The resolve in that PARAMS object is making a fetch to the ProductsService class we generated above and is asking for all items from /api/products/. Because we’re in prototype mode, this won’t actually hit the server but it’s important to note it here. Because “ProductsService.get()” returns a promise, ui-router knows to wait for this promise to resolve before loading the controller.</p>
+        <p>The resolve in that <span class="code">PARAMS</span> object is making a fetch to the ProductsService class we generated earlier and is asking for all items from <span class="code">/api/products/</span>. Because we’re in prototype mode, this won’t actually hit the server but it’s important to note it here. Because <span class="code">ProductsService.get()</span> returns a promise, ui-router knows to wait for this promise to resolve before loading the controller and subsequently the page.</p>
 
-        <p>As for the actual ProductsIndex class, we’re setting the fetched products into the class and providing a few hook in functions for the products-index.html page. If all this syntax looks foreign to you, it’s ES6 syntax, which you can read up on at <a href="http://es6-features.org/">http://es6-features.org/</a>.</p>
+        <p>As for the actual <span class="code">ProductsIndex</span> class, we’re setting the fetched products into the class and providing a few hook-in functions for the <span class="code">products-index.html</span> page to use. If all this syntax looks foreign to you, it’s ES6 syntax, which you can read up on at <a href="http://es6-features.org/">http://es6-features.org/</a>.</p>
 
-        <p>If you remember with angular, if you set a variable to this.variable in the controller, in the template, it comes out as vm.variable. That’s why we have “this.products = products” in the constructor, but in our actual template, it comes out as “item in vm.products” in our ng-repeat. If you save these files and go back to your page, it should look like this:</p>
+        <p>If you remember with angular, when you set a variable to <span class="code">this.variable</span> in the controller, and in the template, it comes out as <span class="code">vm.variable</span>. That’s why we have <span class="code">this.products = products</span> in the constructor, but in our actual template, it comes out as <span class="code">item in vm.products</span> in our ng-repeat. If you save these files and go back to your page, it should look like this:</p>
 
         <img src="/images/getting-started-project-4th.png" />
 
-        <p>We don’t have any data yet, but this should show off some of the ng-if logic happening in the template. If we were not in prototype mode, we would be getting an error from a failed network request.</p>
+        <p>We don’t have any data yet, but this should show off some of the ng-if logic happening in the template. If we were not in prototype mode, we would be getting an error from a failed network request because we have no server instance yet.</p>
 
-        <p>Let’s feed some data into this page.</p>
+        <p>Next, we're going to hydrate the page with data.</p>
     </section>
     <section layout="row">
         <md-button ui-sref="app.overview.getting-started.project-setup"><i class="fa fa-arrow-left"></i> Project Setup</md-button>

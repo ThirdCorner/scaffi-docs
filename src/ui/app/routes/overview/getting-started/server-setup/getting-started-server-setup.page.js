@@ -36,8 +36,7 @@ class GettingStartedServerSetup extends AbstractPage {
 	    },
 	    "sequelize":{
 	      "dialect": "mssql"
-	    },
-	    "epilogue": {}
+	    }
 	},
 
 		`
@@ -106,6 +105,36 @@ class GettingStartedServerSetup extends AbstractPage {
 	};
 		`;
 	}
+	getSampleSql(){
+		return `
+	USE [RockingForm]
+	GO
+	
+	/****** Object:  Table [dbo].[Products]    Script Date: 9/8/2016 11:58:47 AM ******/
+	SET ANSI_NULLS ON
+	GO
+	
+	SET QUOTED_IDENTIFIER ON
+	GO
+	
+	CREATE TABLE [dbo].[Products](
+		[id] [int] IDENTITY(1,1) NOT NULL,
+		[Name] [nvarchar](100) NOT NULL,
+		[Description] [nvarchar](500) NOT NULL,
+		[IsComplete] [bit] NOT NULL DEFAULT ((1)),
+		[CreatedOn] [datetime2](7) NOT NULL,
+		[UpdatedOn] [datetime2](7) NOT NULL,
+		[DeletedOn] [datetime2](7) NULL,
+	PRIMARY KEY CLUSTERED 
+	(
+		[id] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+	
+	GO
+
+		`
+	}
 	getSampleData5(){
 		return `
 	module.exports = function(db, epilogue, io) {
@@ -121,6 +150,20 @@ class GettingStartedServerSetup extends AbstractPage {
 		return ParamResource;
 	};
 		`;
+	}
+	getSampleData6(){
+		return `
+	"components": {
+	    "app": {
+	      "port": 3000
+	    },
+	    "sequelize":{
+	      "dialect": "mssql"
+	    },
+	    "epilogue": {}
+	},
+
+		`
 	}
 }
 

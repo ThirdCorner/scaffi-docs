@@ -64,7 +64,7 @@
             },
             {
               "id": "editing-fixtures",
-              "displayText": "Editing Fixtures",
+              "displayText": "Manipulating Fixtures",
               "sref": "app.overview.getting-started.editing-fixtures",
               "isDisplayable": true,
               "icon": "",
@@ -214,6 +214,32 @@
               "id": "service",
               "displayText": "Service",
               "sref": "app.server.yo-scaffi.service",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "displayText": "Troubleshooting",
+      "sref": "app.troubleshooting",
+      "isDisplayable": true,
+      "icon": "",
+      "routes": [
+        {
+          "id": "sequelize",
+          "displayText": "Sequelize",
+          "sref": "app.troubleshooting.sequelize",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "connection",
+              "displayText": "Connection",
+              "sref": "app.troubleshooting.sequelize.connection",
               "isDisplayable": true,
               "icon": "",
               "routes": []

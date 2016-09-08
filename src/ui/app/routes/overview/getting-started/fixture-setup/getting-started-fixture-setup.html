@@ -1,7 +1,7 @@
 <div class="route route-overview.getting-started.fixture-setup">
     <section>
         <h1>Fixture Setup</h1>
-        <p>Go ahead and in your IDE look at the folder /src/ui/app/services/products-services. This is what we generated above when we said we wanted a service called “products”. It become ProductsService for convention. Open up the products-service.fixture.js.</p>
+        <p>In your IDE, look at the folder <span class="code">/rocking-form/src/ui/app/services/products-services</span>. This is what we generated before when we said we wanted a service called <span class="code">products</span>. It became <span class="code">ProductsService</span> for convention. Open up the <span class="code">products-service.fixture.js</span>.</p>
         <p>Scaffi uses fixtures to inject mock data into the UI that you can then modify and change so that testing code without a server is feasible. Replace the COLLECTIONS array with this:</p>
 
         <code-example type="json" code="vm.getSampleData1()"></code-example>
@@ -10,7 +10,7 @@
 
         <img src="/images/getting-started-fixture-1st.png" />
 
-        <p>If you look at the object structure we put in the fixture.js file and the products-index.html file, you should be able to see the direct correlation between the two files. </p>
+        <p>If you look at the object structure we put in the fixture.js file and the <span class="code">products-index.html</span> file, you should be able to see the direct correlation between the two files. </p>
         <p>To explain what’s happening here: when the app loads, if it’s in prototype mode, it loads any fixture collections into memory. Then, when it sees certain requests made by a service, it filters the service’s fixtures for what data it can pull and returns it to the page controller as if it were making a server request. </p>
         <p>If we add another fixture:</p>
 
@@ -24,13 +24,13 @@
         <p>As you build pages and forms, be sure to maintain at least one test fixture structure per service. Doing so has the following benefits and in fact, this will be a coding practice we need to follow:</p>
 
         <ul class="list">
-            <li>You’ll be able to test the output of data on a page by simply refreshing</li>
-            <li>It provides a referenceable data structure for anyone looking at your code</li>
-            <li>Once you’re done with the prototype stage, if you have maintained an example set of fixtures, building your database schema will be cake walk because you won’t have to dig through html templates, trying to figure out what variables you used. You can look at your objects and build the schema with ease.</li>
-            <li>With fixtures, you’ll be able to run integration tests off of them so that you can test your forms for bugs without the usual manual drawl of testing that we usually do.</li>
+            <li>You’ll be able to test the display output of data on a page by simply modifying your fixture structure</li>
+            <li>Fixtures provide a referenceable data structure for anyone looking at your code</li>
+            <li>Once you’re done with the prototype stage, if you have maintained an example set of fixtures, building your database schema will be cake walk because you won’t have to dig through html templates, trying to figure out what variables you used. You can look at your objects and build the schema with ease (We'll be doing this a bit later).</li>
+            <li>With fixtures, you’ll be able to run integration tests off of them so that you can test your forms for bugs without the usual manual drawl of testing by code-refresh-code-refresh.</li>
         </ul>
 
-        <p class="alert">!!! When you’re going through the prototype stage and building out your data structures, make sure to use good clear names so that you don’t have to clean up later. !!!</p>
+        <p class="alert">!!! When you’re going through the prototype stage and building out your data structures, make sure to use good clear names so that you don’t have to clean them up later. If you're working with a DBA that's dictating the schema structure, make sure you agree on naming conventions and data points before you start coding, otherwise you'll be redoing stuff. !!!</p>
 
         <p>Maintaining fixture examples will make everyone on the project happy, so when you change a form or a display stub, remember to update your fixture too.</p>
         <p>We don’t just display data though, right? We do lots of forms and edit lots of data structures, so let’s see how that works in prototype mode without a server.</p>
