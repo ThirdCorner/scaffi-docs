@@ -4,7 +4,7 @@
         <p>Go ahead and in your IDE look at the folder /src/ui/app/services/products-services. This is what we generated above when we said we wanted a service called “products”. It become ProductsService for convention. Open up the products-service.fixture.js.</p>
         <p>Scaffi uses fixtures to inject mock data into the UI that you can then modify and change so that testing code without a server is feasible. Replace the COLLECTIONS array with this:</p>
 
-        <pre><code class="json" template="vm.getSampleData1()"></code></pre>
+        <code-example type="json" code="vm.getSampleData1()"></code-example>
 
         <p>Think of this as a table record converted to JSON. If you made an actual request to a server, because we work in mostly all JSON, you’d get a structure that looks exactly like this if your table had four columns (id, Name, Description, IsComplete). Once you save that, your page should refresh and look like so:</p>
 
@@ -14,7 +14,7 @@
         <p>To explain what’s happening here: when the app loads, if it’s in prototype mode, it loads any fixture collections into memory. Then, when it sees certain requests made by a service, it filters the service’s fixtures for what data it can pull and returns it to the page controller as if it were making a server request. </p>
         <p>If we add another fixture:</p>
 
-        <pre><code class="json" template="vm.getSampleData2()"></code></pre>
+        <code-example type="json" code="vm.getSampleData2()"></code-example>
 
         <p>The page should now look like so:</p>
 

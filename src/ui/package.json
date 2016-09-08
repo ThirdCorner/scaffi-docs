@@ -137,6 +137,7 @@
       "json": "github:systemjs/plugin-json@0.1.0",
       "lodash": "^3.10.1",
       "moment": "^2.10.6",
+      "ngclipboard": "^1.1.1",
       "pc035860/angular-highlightjs": "github:pc035860/angular-highlightjs@^0.6.2",
       "scaffi-ui-core": "github:ThirdCorner/scaffi-ui-core@master",
       "scss": "github:theefer/plugin-sass@master",

@@ -26,13 +26,14 @@
         </p>
         <p>In the /src/ui/app/routes/products/form/products-form.html page, replace it with the following:</p>
 
-        <pre><code class="html" template="vm.getSampleData1()"></code></pre>
+        <code-example type="html" code="vm.getSampleData1()"></code-example>
 
         <p>This is a simple form, matching the properties in our fixture so that we can edit them.</p>
         <p>One last change we need to do is in /src/ui/app/routers/products/index/products-index.html.</p>
         <p>Change any instance of ng-click="null" to the following:</p>
 
-        <pre><code template="vm.getSampleData2()"></code></pre>
+
+        <code-example code="vm.getSampleData2()"></code-example>
 
         <p>This will let the list items go to the form in an editable state.</p>
         <p>Go ahead and run ‘yo scaffi:start ui’ again and refresh your page.</p>
@@ -55,7 +56,7 @@
         <p>As you can see, we submitted data, changed page states and it propagated as if we had a server attached. If we hooked this up to a server with a matching schema to our fixture, we wouldn’t need to change any code. </p>
         <p>Let’s do an add state. In /src/ui/app/routes/products/index/products-index.html, after the first md-content tag, add a link:</p>
 
-        <pre><code class="html" template="vm.getSampleData3()"></code></pre>
+        <code-example type="html" code="vm.getSampleData3()"></code-example>
 
         <img src="/images/getting-started-manipulate-fixtures-3rd.png" />
 

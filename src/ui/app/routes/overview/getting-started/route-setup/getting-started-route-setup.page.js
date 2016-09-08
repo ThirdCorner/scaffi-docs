@@ -30,8 +30,8 @@ class GettingStartedRouteSetup extends AbstractPage {
 	
 	}
 	getSampleOne(){
-		return ` 
-	<div class="route route-products.index">
+		return `
+    <div class="route route-products.index">
         <md-toolbar layout="row" class="md-primary">
             <div class="md-toolbar-tools">
                 <span>Products</span>

@@ -1,37 +1,33 @@
 <div class="route route-overview.getting-started.route-setup">
     <section>
         <h1>Page Setup</h1>
-        <p>We’re going to make a simple list / form section so you can get an idea of how cool prototype mode is. Kill your "yo scaffi:start" process if you haven’t already  (ctrl + c) and let’s run some generators:</p>
+        <p>We’re going to make a simple list / form section so you can get an idea of how cool prototype mode is. Kill your <span class="code">yo scaffi:start</span> process if you haven’t already <span class="code">(ctrl + c)</span> and let’s run some generators:</p>
         <p class="command">yo scaffi:service</p>
 
         <ul class="list">
-            <li>Type “products” for the name</li>
-            <li>Type “UI” for the service type</li>
-            <li>Type “products” for the REST route</li>
+            <li>Type <span class="code">products</span> for the name</li>
+            <li>Select <span class="code">UI</span> for the service type</li>
+            <li>Type <span class="code">products</span> for the REST route</li>
         </ul>
 
-        <p>This creates an angular service that will call localhost:3000/api/products whenever a server is up. </p>
+        <p>This creates an angular service that will call <span class="code">localhost:3000/api/products</span> when we're not in prototype mode. </p>
         <p>Let’s create a route as well, which in url terms is a sub-route grouping. </p>
 
         <p class="command">yo scaffi:route</p>
 
         <ul class="list">
-            <li>Type “products” for the name</li>
-            <li>Type "n" for no when it asks if this is a nested route</li>
-            <li>Select "basic" for the page template</li>
+            <li>Type <span class="code">products</span> for the name</li>
+            <li>Type <span class="code">n</span> for no when it asks if this is a nested route</li>
+            <li>Select <span class="code">basic</span> for the page template and hit enter</li>
         </ul>
 
-        <p>This creates a url route localhost:5010/products that we can add pages to. </p>
-        <p>Before we start npm again, let’s go into <i>src/ui/app/routes/products</i> in our IDE. You’ll notice it too has an index folder. When /products or /products/ is called from the browser, this <i>products/index/products-index.html</i> page returns the content for that url. The controller for it is products-index.page.js.</p>
+        <p>This creates a url route on <span class="code">localhost:5010/products</span> that we can add pages to it. </p>
+        <p>Before we start scaffi again, let’s go into <span class="code">rocking-form/src/ui/app/routes/products</span> in our IDE. You’ll notice it too has an index folder. When <span class="code">/products</span> or <span class="code">/products/</span> is called from the browser, this <span class="code">products/index/products-index.html</span> template page returns the content for that url. The controller for this template is <span class="code">products-index.page.js</span>.</p>
 
-        <p>Open the products-index.html page and paste this in:</p>
+        <p>Open the <span class="code">products-index.html</span> page and paste this in:</p>
 
-        <pre>
-            <code class="html" template="vm.getSampleOne()"></code>
-        </pre>
-        <pre> 
-            <code class="html" template="vm.getSampleTwo()"></code>
-        </pre>
+        <code-example type="html" code="vm.getSampleOne()"></code-example>
+        <code-example type="html" code="vm.getSampleTwo()"></code-example>
 
         <p>Now let’s run ‘yo scaffi:start ui’, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
         <img src="/images/getting-started-project-2nd.png" />
@@ -45,16 +41,12 @@
 
         <p>In your products/index/products-index.html page (in Webstorm you can type CTRL+SHIFT+n to access the page really easy), change the html to this:</p>
 
-        <pre>
-            <code class="html" template="vm.getSampleThree()"></code>
-        </pre>
+        <code-example type="html" code="vm.getSampleThree()"></code-example>
 
         <p>A quick overview of this page is we have two sections that ng-repeats through an array called “products” that the controller page is providing. It filters based on if the product item has an IsComplete boolean of true or false with some added material flexbox goodness.</p>
         <p>In products/index/products-index.page.js, replace the contents with this:</p>
 
-        <pre>
-            <code class="javascript" template="vm.getSampleFour()"></code>
-        </pre>
+        <code-example type="javascript" code="vm.getSampleFour()"></code-example>
 
         <p>To give a high level view of this page, we’re importing stuff from Scaffi core and bringing in lodash. The ROUTE and PARAMS const that feed into @RouteConfig are what tell ui-router where to put this page in the router loading process.</p>
 

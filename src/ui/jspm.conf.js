@@ -49,6 +49,7 @@ System.config({
     "lodash": "npm:lodash@3.10.1",
     "mocha": "npm:mocha@2.4.5",
     "moment": "npm:moment@2.14.1",
+    "ngclipboard": "npm:ngclipboard@1.1.1",
     "pc035860/angular-highlightjs": "github:pc035860/angular-highlightjs@0.6.2",
     "scaffi-ui-core": "github:ThirdCorner/scaffi-ui-core@master",
     "scss": "github:theefer/plugin-sass@master",
@@ -483,6 +484,11 @@ System.config({
       "url": "github:jspm/nodelibs-url@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:clipboard@1.5.12": {
+      "good-listener": "npm:good-listener@1.1.7",
+      "select": "npm:select@1.0.6",
+      "tiny-emitter": "npm:tiny-emitter@1.1.0"
+    },
     "npm:cliui@2.1.0": {
       "center-align": "npm:center-align@0.1.1",
       "right-align": "npm:right-align@0.1.3",
@@ -494,6 +500,9 @@ System.config({
     "npm:clone@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "vm": "github:jspm/nodelibs-vm@0.1.0"
+    },
+    "npm:closest@0.0.1": {
+      "matches-selector": "npm:matches-selector@0.0.1"
     },
     "npm:colors@1.1.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -625,6 +634,9 @@ System.config({
     "npm:delayed-stream@1.0.0": {
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:delegate@3.0.1": {
+      "closest": "npm:closest@0.0.1"
     },
     "npm:depd@1.1.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -883,6 +895,9 @@ System.config({
     "npm:glogg@1.0.0": {
       "sparkles": "npm:sparkles@1.0.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:good-listener@1.1.7": {
+      "delegate": "npm:delegate@3.0.1"
     },
     "npm:graceful-fs@4.1.4": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -1345,6 +1360,10 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:ngclipboard@1.1.1": {
+      "angular": "npm:angular@1.5.8",
+      "clipboard": "npm:clipboard@1.5.12"
     },
     "npm:node-pre-gyp@0.6.26": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",

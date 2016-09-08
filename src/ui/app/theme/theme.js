@@ -10,14 +10,14 @@ import './layout-error/layout-error.js';
 import 'angular-material';
 import 'angular-loading-bar';
 import 'hljs.js';
-
-// import 'pc035860/angular-highlightjs';
+import 'ngclipboard';
 
 class Theme extends AbstractMaterial {
 	initialize(){
 		this.addRequires([
 			'ngMaterial',
-			'angular-loading-bar'
+			'angular-loading-bar',
+			'ngclipboard'
 		]);
 		this.getApp().config( (cfpLoadingBarProvider)=>{
 			cfpLoadingBarProvider.includeBar = true;
@@ -30,19 +30,19 @@ class Theme extends AbstractMaterial {
 		});
 		
 		this.getApp().config( ($mdThemingProvider) =>{
-			var defaultPal = $mdThemingProvider.extendPalette('blue', {
-				'400': 'B8BCA7',
-				'500': 'B8BCA7',
-				'600': '545D32',
-				'700': '6C744A',
-				'800': '6C744A'
-			});
+			// var defaultPal = $mdThemingProvider.extendPalette('blue', {
+			// 	'400': 'B8BCA7',
+			// 	'500': 'B8BCA7',
+			// 	'600': '545D32',
+			// 	'700': '6C744A',
+			// 	'800': '6C744A'
+			// });
 			
-			$mdThemingProvider.definePalette('blue', defaultPal);
+			//$mdThemingProvider.definePalette('blue', defaultPal);
 			
 			$mdThemingProvider.theme('default')
 				.primaryPalette('blue')
-				.accentPalette('orange');
+			//	.accentPalette('orange');
 		});
 	}
 }

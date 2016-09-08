@@ -14,12 +14,12 @@
         <p>Be sure to select <b>localhost</b> as the new mode to work in.</p>
         <p>Before we start things up, open up "/src/server/scaffi-server.json". Since we’re connecting to sql, make the components object look like so:</p>
 
-        <pre><code class="json" template="vm.getSampleData1()"></code></pre>
+        <code-example type="json" code="vm.getSampleData1()"></code-example>
 
         <p>This tells sequelize that we’re connecting to mssql, and that we’re using epilogue as an add-on, which we’ll get into later.</p>
         <p>In "/src/server/scaffi-server.private.json", replace with the following:</p>
 
-        <pre><code class="json" template="vm.getSampleData2()"></code></pre>
+        <code-example type="json" code="vm.getSampleData2()"></code-example>
 
         <p>If you’re not using sqlexpress, take out the line with the instance. Otherwise, fill in the username and password with whatever account you have attached to the RockingForm DB.</p>
 
@@ -29,11 +29,11 @@
         <p>One last thing we want to do is add a products model that our UI is setup to manipulate.</p>
         <p>If you remember, we have a fixture in products-service.fixture.js on the UI side that looks like this:</p>
 
-        <pre><code class="json" template="vm.getSampleData3()"></code></pre>
+        <code-example type="json" code="vm.getSampleData3()"></code-example>
 
         <p>In "/src/server/models", make a JS file called "Products.js" (Name needs to match whatever table name it’s going to be in the exact casing). Paste the following:</p>
 
-        <pre><code class="javascript" template="vm.getSampleData4()"></code></pre>
+        <code-example type="javascript" code="vm.getSampleData4()"></code-example>
 
         <p>This is Sequelize's syntax for table schemas. Having the fixture in the UI makes it really easy to construct the table schema that the server will use. If you haven’t already, go into your DB and add this table schema to the actual database. </p>
 
@@ -57,7 +57,7 @@
         <p>We have our server talking with the database, now we need the server to set up a CRUD route for the UI’s products-service.service to use to talk to the database. With Sequelize comes Epilogue (<a href="https://github.com/dchester/epilogue">https://github.com/dchester/epilogue</a>). </p>
         <p>In "/src/server/routes" add a folder called "epilogue" if not there already. In that folder, create a JS file called "products.js" and paste the following:</p>
 
-        <pre><code class="javascript" template="vm.getSampleData5()"></code></pre>
+        <code-example type="javascript" code="vm.getSampleData5()"></code-example>
 
         <p>This sets up a classic REST route that the UI expects to be there. Go ahead and kill your npm process and then run 'yo scaffi:start server' on the server again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
 

@@ -1,0 +1,8 @@
+<div class="component component-code-example" style="position: relative;">
+    <md-button ngclipboard data-clipboard-text="{{vm.code}}" style="position: absolute; top: 15px; right: 5px;" class="md-fab md-mini md-primary"><md-icon class="fa fa-clipboard"></md-icon></md-button>
+    <pre>
+        <code class="{{vm.type}}" template="vm.code">
+            {{vm.code}}
+        </code>
+    </pre>
+</div>
