@@ -18,6 +18,7 @@
       "uiLocalhostPort": "5011",
       "serverLocalhostPort": "3000",
       "customizeDataStructure": false
-    }
+    },
+    "structureVersion": 1
   }
 }
