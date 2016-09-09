@@ -1,0 +1,22 @@
+<div class="route route-overview.migrations">
+    <section>
+        <h1>Migration</h1>
+        <p>Reference this page to see what structure upgrades happen between release changes. Manual steps indicate that a coder on the project has to do these things in order to bring the project up-to-date with the build process.</p>
+    </section>
+    <section>
+        <h2> Upgrade to 0.0.3 / Structure Upgrade #1</h2>
+        <h3>Manual Steps</h3>
+        <p>None</p>
+        <h3>Changelist</h3>
+        <ul class="list">
+            <li>Took out postinstall in <mark>ui/package.json</mark>; Moved responsibility to <mark>yo scaffi:build-web</mark>.</li>
+            <li>Added a package.json to root of project so that <mark>yo scaffi:build-web</mark> can be run without having to global install packages.</li>
+            <li>Version-locked jspm to 0.16.35 and systemjs-builder to 0.15.15 so that <mark>gulp build</mark> won't error.</li>
+            <li>Added folders to <mark>build</mark> folder (web, android, ios) so that you can select them in Team Services without committing code to them.</li>
+            <li>Add gitignore items for <mark>/build/web/server/*</mark> and <mark>/node_modules</mark>.</li>
+            <li>Made sure <mark>/src/server</mark> has a nodemon devDependancy to call via <mark>yo scaffi:start server</mark>.</li>
+            <li>Got rid of the <mark>npm start</mark> scripts because we only want to use <mark>yo scaffi:start</mark>.</li>
+            <li>Switched any references of <mark>scaffi-*-core</mark> to npm counterparts, rather than github master reference.</li>
+        </ul>
+    </section>
+</div>

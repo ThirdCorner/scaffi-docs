@@ -12,6 +12,7 @@ import './overview/getting-started/setup/getting-started-setup.page.js';
 import './overview/index/overview-index.page.js';
 import './overview/installation/overview-installation-install.stub.js';
 import './overview/installation/overview-installation.page.js';
+import './overview/migrations/overview-migrations.page.js';
 import './overview/overview.route.js';
 import './server/index/server-index.page.js';
 import './server/server.route.js';

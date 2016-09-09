@@ -87,6 +87,14 @@
               "routes": []
             }
           ]
+        },
+        {
+          "id": "migrations",
+          "displayText": "Migrations",
+          "sref": "app.overview.migrations",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": []
         }
       ]
     },
