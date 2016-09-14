@@ -193,6 +193,47 @@
               "routes": []
             }
           ]
+        },
+        {
+          "id": "concepts",
+          "displayText": "Concepts",
+          "sref": "app.ui.concepts",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "routes",
+              "displayText": "Routes (Modules)",
+              "sref": "app.ui.concepts.routes",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "pages",
+              "displayText": "Pages (States)",
+              "sref": "app.ui.concepts.pages",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "injection",
+              "displayText": "Injection",
+              "sref": "app.ui.concepts.injection",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "exports-imports",
+              "displayText": "Exports & Imports",
+              "sref": "app.ui.concepts.exports-imports",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
         }
       ]
     },

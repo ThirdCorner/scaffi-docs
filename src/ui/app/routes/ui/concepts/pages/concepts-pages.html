@@ -1,0 +1,31 @@
+<div class="route route-ui.concepts.pages">
+    <section>
+        <h1>Pages (States)</h1>
+        <p>As Angular defines, controllers glue together your html with the rest of the system. They define the page scope and try to separate your logic from your view. </p>
+        <p>Let’s take a look at one way we do controllers in Angular 1.x</p>
+
+        <p><mark>file: app/components/billing/billingReport/billingReportController.js</mark></p>
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>The gist of this structure is that we’re attaching a controller function to a module, which says what routes call this controller. Then, when the controller is loaded, we inject variables and functions into a vm object, which gets set in the scope for the page view to access. </p>
+        <p>If you remember from the Routes section, this controller is set to the following state:</p>
+
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>As you can see, this state is actually what glues our controller to our page view. </p>
+        <p>In the new structure, the idea of the controller is simply an ES6 class with param options that define what it does. </p>
+        <p>If we rewrote this in the new system, it would look something like this:</p>
+
+        <p><mark>file: app/routes/billing-report/index/billing-report-index.page.js</mark></p>
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+
+        <p>There’s a bit more going on here. In the <mark>PARAMS</mark> object, the url is being set to <mark>/</mark>, which when combined with its parent route, will become <mark>/billing-report/</mark>. Because this is the index page in the route group, it doesn’t need to be anything more. </p>
+        <p>The biggest departure from the old way of doing things in a class controller is that you don't have to explicitly set <mark>$scope.vm</mark> and assign variables you need access to on your view page. </p>
+        <p>In the new structure, the template <mark>$scope</mark> automatically gets access to anything the class has access to. </p>
+        <p>If our template looks something like this:</p>
+
+        <code-example type="html" code="vm.getCode4()"></code-example>
+
+        <p>As you can see, the function <mark>goToItem</mark> that's declared in <mark>BillingReportIndex</mark> is accessible on the page in the vm object. Not only that, but the <mark>myData</mark> array is also accessible from the class by calling <mark>vm.myData</mark> on the page view. </p>
+    </section>
+</div>

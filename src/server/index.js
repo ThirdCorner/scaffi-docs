@@ -6,11 +6,7 @@ var path = require('path');
 
 var opts = {
 	config: {},
-	components: {
-		"app": {
-			"port": process.env.PORT
-		}
-	},
+	components: {},
 	services: {}
 };
 

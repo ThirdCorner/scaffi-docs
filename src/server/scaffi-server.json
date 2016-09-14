@@ -13,9 +13,7 @@
     "environment": "prototype"
   },
   "components": {
-    "app": {
-      "port": 3000
-    }
+    "app": {}
   },
   "services": {}
 }

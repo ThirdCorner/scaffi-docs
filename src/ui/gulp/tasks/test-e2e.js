@@ -2,7 +2,7 @@
 
 import gulp from 'gulp';
 import util from 'gulp-util';
-import protractor from 'gulp-protractor';
+//import protractor from 'gulp-protractor';
 import path from '../paths';
 import {E2E_DEVELOPMENT_URL} from '../const'; //E2E_STAGING_URL
 
@@ -29,22 +29,22 @@ if(!BROWSERS.match(new RegExp(/IE|PhantomJS|Chrome|Firefox|Safari/))) {
  * @return {Stream}
  */
 /*jshint camelcase: false */
-gulp.task('webdriver_update', false, protractor.webdriver_update); // update/install webdriver
-gulp.task('test:e2e', ['webdriver_update'], () => {
-
-	//  E2E_DEVELOPMENT_URL + ":4444"
-    return gulp.src(path.test.e2e)
-        .pipe(protractor.protractor({
-            configFile: path.test.config.protractor,
-            args: ['--baseUrl', "http://localhost:5002", '--capabilities.browserName', BROWSERS.toLowerCase()] // protractor only accept lowercase browser name
-        }))
-        //.on('error', function () {
-        //    LOG(COLORS.red('Error: E2E test failed'));
-        //    // make sure failed tests cause gulp to exit non-zero
-        //    return process.exit(1);
-        //});
-});
-gulp.task('watch:test:e2e', ['serve'], ()=>{
-    gulp.watch(['app/**', 'app.js'], ['test:e2e']);
-    gulp.start('test:e2e');
-});
+// gulp.task('webdriver_update', false, protractor.webdriver_update); // update/install webdriver
+// gulp.task('test:e2e', ['webdriver_update'], () => {
+//
+// 	//  E2E_DEVELOPMENT_URL + ":4444"
+//     return gulp.src(path.test.e2e)
+//         .pipe(protractor.protractor({
+//             configFile: path.test.config.protractor,
+//             args: ['--baseUrl', "http://localhost:5002", '--capabilities.browserName', BROWSERS.toLowerCase()] // protractor only accept lowercase browser name
+//         }))
+//         //.on('error', function () {
+//         //    LOG(COLORS.red('Error: E2E test failed'));
+//         //    // make sure failed tests cause gulp to exit non-zero
+//         //    return process.exit(1);
+//         //});
+// });
+// gulp.task('watch:test:e2e', ['serve'], ()=>{
+//     gulp.watch(['app/**', 'app.js'], ['test:e2e']);
+//     gulp.start('test:e2e');
+// });

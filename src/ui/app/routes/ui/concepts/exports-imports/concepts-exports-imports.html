@@ -1,0 +1,57 @@
+<div class="route route-ui.concepts.exports-imports">
+    <section>
+        <h1>Exports and Imports</h1>
+    </section>
+    <section>
+        <h2>Importing Classes</h2>
+        <p>As stated in the Classes section, we separate our functionality into classes and then import those classes where needed.</p>
+
+        <p><i>Export</i></p>
+        <p><mark>file: app/helpers/StringHelper.js</mark></p>
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p><i>Import</i></p>
+        <p><mark>file: app/classes/abstract-filter-apply.js</mark></p>
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>You'll notice that we don’t have to include <code>.js</code> in our import statement. Anything imported is assumed to be a js file unless explicitly stated.</p>
+    </section>
+    <section>
+        <h2>Importing Other File Types</h2>
+        <p>If we're trying to import a file-type other than js, we have to explicitly declare the type. This can be seen whenever we import html files in a page class: </p>
+
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+    </section>
+    <section>
+        <h2>Importing NPM/GitHub Packages</h2>
+        <p>We use <mark>lodash</mark> a lot, which is an npm package. To use it in a js file, at the top, you'll see this:</p>
+
+        <code-example type="javascript" code="vm.getCode4()"></code-example>
+
+        <p>Notice how we’re assigning the <mark>lodash</mark> package to the variable <mark>_</mark>. We could also do something like this to get the same result:</p>
+
+        <code-example type="javascript" code="vm.getCode5()"></code-example>
+
+        <p>Then, we would just call it like normal:</p>
+
+        <code-example type="javascript" code="vm.getCode6()"></code-example>
+
+        <p>You'll notice that we don't have to do relative paths like <mark>../../npm/lodash</mark> for npm-installed packages. That's because <mark>npm/jspm</mark> knows to look in our packages folder.</p>
+    </section>
+    <section>
+        <h2>Importing Variables</h2>
+        <p>With ES6, we can also export and import variables between files. If you look at any of the <mark>page.js</mark> files in <mark>src/app/routes/**</mark>, you’ll see this being accomplished:</p>
+        <mark>file: app/routes/home/index/home-index.page.js</mark>
+
+        <code-example type="javascript" code="vm.getCode7()"></code-example>
+
+        <p>We’re not only exporting the class, but also the <mark>ROUTE</mark> and <mark>PARAMS</mark> object.</p>
+        <p>If we need access to the <mark>ROUTE</mark> variable in another page, say for instance we need it for testing, we can do the following:</p>
+        <p><mark>file: app/routes/home/index/home-index.e2e.js</mark></p>
+
+        <code-example type="javascript" code="vm.getCode8()"></code-example>
+
+        <p>What's contained in <mark>ROUTE</mark> on import is <mark>app.home.index</mark>.</p>
+        <p>Remember that <mark>./</mark> is the current folder our file is in, and <mark>../</mark> is accessing the folder above.</p>
+    </section>
+</div>

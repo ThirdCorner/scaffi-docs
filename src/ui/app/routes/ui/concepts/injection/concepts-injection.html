@@ -1,0 +1,19 @@
+<div class="route route-ui.concepts.injection">
+    <section>
+        <h1>Injection</h1>
+        <p>As with the old structure, in the new structure, you can inject anything that Angular knows about.</p>
+
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>If we want access to those variables in any of our functions, we add them to the context of the class via the <mark>this</mark> variable. For instance, if we need access to a Service:</p>
+
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>Injection is based on Angular injection principles, so nothing much has changed there, other than where you declare your injections.</p>
+        <p>We can also inject the <mark>$injector</mark> factory, and then dynamically inject classes in our functions.</p>
+
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+
+        <p>Essentially, the two classes above do the same thing.</p>
+    </section>
+</div>

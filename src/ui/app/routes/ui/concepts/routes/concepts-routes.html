@@ -1,0 +1,24 @@
+<div class="route route-ui.concepts.routes">
+    <section>
+        <h1>Routes(Modules)</h1>
+        <p>A module in Angular terms determines a grouping of pages and how to get to them. This is where we integrate UI-Router to build our app page structures.</p>
+        <p>This is an example of how we do modules in Angular 1.x</p>
+        <p><mark>file: app/components/billing/billingModule.js</mark></p>
+
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>In this snippet, we’re registering a namespace with Angular that, when called, will set up the billing routes for the app. This tells Angular what url defines each page and what controller to call. </p>
+        <p>In the new structure, we split this concept into routes and pages.</p>
+        <p>A route in the new structure groups a collection of pages, just as a namespaced module grouped a collection of states. </p>
+        <p>For example, in a url such as <mark>http://github.com/git/edit</mark>, <mark>git</mark>, is a route, where as <mark>editTime</mark> is a page.</p>
+        <p>All routes, when generated with <mark>yo scaffi:route</mark> get a page called <mark>index</mark> so that the route can stay abstract in ui-router terms, and all pages under a route get their own folder in the filesystem tree structure.</p>
+        <p>Let's take a look at the structure of a route if we rewrote the billingModule module above:</p>
+
+        <p><mark>file: app/routes/billing-report/billing-report.route.js</mark></p>
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>The general gist of this snippet is that we have params which define the details of a route decorator which attaches to a Javascript class. This class is a controller in the Angular sense, so you can put logic in here that runs whenever someone first comes to this route.</p>
+        <p>If the <mark>PARAMS</mark> const look familiar, they’re the exact same ones you would provide a state in <mark>ui-router</mark>. Some params are filled in for you via the decorator, like the controller param, but if you want more information on what you can set in the state, you can go to: <a href="https://github.com/angular-ui/ui-router/wiki">https://github.com/angular-ui/ui-router/wiki</a></p>
+        <p>The main purpose of this route, besides grouping pages into logical categories, is to redirect to the index page whenever this route is called specifically. It’s a nice user enhancement so that if they happen to go to <mark>http://webapp.com/billing-report</mark>, ui-router will redirect them to <mark>http://webapp.com/billing-report/</mark>. This becomes important when you add breadcrumbs because breadcrumbs will go to the former url, not the latter.</p>
+    </section>
+</div>
