@@ -47,10 +47,10 @@ System.config({
     "karma-phantomjs-shim": "npm:karma-phantomjs-shim@1.1.2",
     "lodash": "npm:lodash@3.10.1",
     "mocha": "npm:mocha@2.4.5",
-    "moment": "npm:moment@2.14.1",
+    "moment": "npm:moment@2.15.0",
     "ngclipboard": "npm:ngclipboard@1.1.1",
     "pc035860/angular-highlightjs": "github:pc035860/angular-highlightjs@0.6.2",
-    "scaffi-ui-core": "npm:scaffi-ui-core@0.0.2",
+    "scaffi-ui-core": "npm:scaffi-ui-core@0.0.3",
     "scss": "github:theefer/plugin-sass@master",
     "text": "github:systemjs/plugin-text@0.0.2",
     "walkdir": "npm:walkdir@0.0.10",
@@ -343,7 +343,7 @@ System.config({
     "npm:browserify-aes@1.0.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "buffer-xor": "npm:buffer-xor@1.0.3",
-      "cipher-base": "npm:cipher-base@1.0.2",
+      "cipher-base": "npm:cipher-base@1.0.3",
       "create-hash": "npm:create-hash@1.1.2",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
@@ -360,7 +360,7 @@ System.config({
     },
     "npm:browserify-des@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "cipher-base": "npm:cipher-base@1.0.2",
+      "cipher-base": "npm:cipher-base@1.0.3",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "des.js": "npm:des.js@1.0.0",
       "inherits": "npm:inherits@2.0.1"
@@ -379,7 +379,7 @@ System.config({
       "create-hash": "npm:create-hash@1.1.2",
       "create-hmac": "npm:create-hmac@1.1.4",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
-      "elliptic": "npm:elliptic@6.3.1",
+      "elliptic": "npm:elliptic@6.3.2",
       "inherits": "npm:inherits@2.0.1",
       "parse-asn1": "npm:parse-asn1@5.0.0",
       "stream": "github:jspm/nodelibs-stream@0.1.0"
@@ -453,7 +453,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "readdirp": "npm:readdirp@2.0.0"
     },
-    "npm:cipher-base@1.0.2": {
+    "npm:cipher-base@1.0.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "inherits": "npm:inherits@2.0.1",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
@@ -548,11 +548,11 @@ System.config({
       "bn.js": "npm:bn.js@4.11.6",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
-      "elliptic": "npm:elliptic@6.3.1"
+      "elliptic": "npm:elliptic@6.3.2"
     },
     "npm:create-hash@1.1.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "cipher-base": "npm:cipher-base@1.0.2",
+      "cipher-base": "npm:cipher-base@1.0.3",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "inherits": "npm:inherits@2.0.1",
@@ -578,7 +578,7 @@ System.config({
       "create-hmac": "npm:create-hmac@1.1.4",
       "diffie-hellman": "npm:diffie-hellman@5.0.2",
       "inherits": "npm:inherits@2.0.1",
-      "pbkdf2": "npm:pbkdf2@3.0.4",
+      "pbkdf2": "npm:pbkdf2@3.0.6",
       "public-encrypt": "npm:public-encrypt@4.0.0",
       "randombytes": "npm:randombytes@2.0.3"
     },
@@ -659,7 +659,7 @@ System.config({
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "jsbn": "npm:jsbn@0.1.0"
     },
-    "npm:elliptic@6.3.1": {
+    "npm:elliptic@6.3.2": {
       "bn.js": "npm:bn.js@4.11.6",
       "brorand": "npm:brorand@1.0.6",
       "hash.js": "npm:hash.js@1.0.3",
@@ -1018,7 +1018,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "http": "github:jspm/nodelibs-http@1.7.1",
-      "jsprim": "npm:jsprim@1.3.0",
+      "jsprim": "npm:jsprim@1.3.1",
       "sshpk": "npm:sshpk@1.10.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
@@ -1119,10 +1119,10 @@ System.config({
     "npm:jsonpointer@2.0.0": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
-    "npm:jsprim@1.3.0": {
+    "npm:jsprim@1.3.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "extsprintf": "npm:extsprintf@1.0.2",
-      "json-schema": "npm:json-schema@0.2.2",
+      "json-schema": "npm:json-schema@0.2.3",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "util": "github:jspm/nodelibs-util@0.1.0",
       "verror": "npm:verror@1.3.6"
@@ -1457,7 +1457,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "create-hash": "npm:create-hash@1.1.2",
       "evp_bytestokey": "npm:evp_bytestokey@1.0.0",
-      "pbkdf2": "npm:pbkdf2@3.0.4",
+      "pbkdf2": "npm:pbkdf2@3.0.6",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
     "npm:parse-glob@3.0.4": {
@@ -1496,14 +1496,11 @@ System.config({
       "pify": "npm:pify@2.3.0",
       "pinkie-promise": "npm:pinkie-promise@2.0.1"
     },
-    "npm:pbkdf2@3.0.4": {
+    "npm:pbkdf2@3.0.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
       "create-hmac": "npm:create-hmac@1.1.4",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
-      "path": "github:jspm/nodelibs-path@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:pify@2.3.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -1726,7 +1723,7 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:scaffi-ui-core@0.0.2": {
+    "npm:scaffi-ui-core@0.0.3": {
       "angular": "npm:angular@1.5.8",
       "angular-animate": "npm:angular-animate@1.5.8",
       "angular-aria": "npm:angular-aria@1.5.8",
@@ -1738,7 +1735,7 @@ System.config({
       "body-parser": "npm:body-parser@1.15.2",
       "css": "npm:css@2.2.1",
       "lodash": "npm:lodash@4.15.0",
-      "moment": "npm:moment@2.14.1",
+      "moment": "npm:moment@2.15.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "request-promise": "npm:request-promise@3.0.0",

@@ -13,7 +13,7 @@
     "bluebird": "^3.4.0",
     "ejs": "^2.4.1",
     "lodash": "^4.8.2",
-    "scaffi-server-core": "0.0.3"
+    "scaffi-server-core": "^0.0.5"
   },
   "devDependencies": {
     "nodemon": "^1.9.1"

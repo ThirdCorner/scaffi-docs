@@ -133,7 +133,7 @@
       "moment": "^2.10.6",
       "ngclipboard": "^1.1.1",
       "pc035860/angular-highlightjs": "github:pc035860/angular-highlightjs@^0.6.2",
-      "scaffi-ui-core": "^0.0.2",
+      "scaffi-ui-core": "^0.0.3",
       "scss": "github:theefer/plugin-sass@master",
       "text": "github:systemjs/plugin-text@0.0.2",
       "walkdir": "^0.0.10"
