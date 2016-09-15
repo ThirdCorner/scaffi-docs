@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ThirdCorner/scaffi-docs#readme",
   "devDependencies": {
-    "generator-scaffi": "github:thirdcorner/generator-scaffi#develop",
+    "generator-scaffi": "latest",
     "yo": "^1.8.4"
   }
 }
