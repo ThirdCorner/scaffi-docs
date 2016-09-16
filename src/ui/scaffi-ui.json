@@ -11,6 +11,6 @@
     "idCapitalizeStandard": "pascalCase",
     "routeLowercaseStandard": true,
     "environment": "prototype",
-    "version": "0.3.9"
+    "version": "0.0.0"
   }
 }

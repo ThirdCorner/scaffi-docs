@@ -10,7 +10,8 @@
     "columnMultiWorkStandard": null,
     "idCapitalizeStandard": "pascalCase",
     "routeLowercaseStandard": true,
-    "environment": "prototype"
+    "environment": "prototype",
+    "version": "0.0.0"
   },
   "components": {
     "app": {}
