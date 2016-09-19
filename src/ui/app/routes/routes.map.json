@@ -232,6 +232,14 @@
               "isDisplayable": true,
               "icon": "",
               "routes": []
+            },
+            {
+              "id": "classes",
+              "displayText": "Classes",
+              "sref": "app.ui.concepts.classes",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
             }
           ]
         }
@@ -263,6 +271,39 @@
               "id": "service",
               "displayText": "Service",
               "sref": "app.server.yo-scaffi.service",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            }
+          ]
+        },
+        {
+          "id": "concepts",
+          "displayText": "Concepts",
+          "sref": "app.server.concepts",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": [
+            {
+              "id": "configuration",
+              "displayText": "Configuration",
+              "sref": "app.server.concepts.configuration",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "components",
+              "displayText": "Components",
+              "sref": "app.server.concepts.components",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "responses",
+              "displayText": "Responses",
+              "sref": "app.server.concepts.responses",
               "isDisplayable": true,
               "icon": "",
               "routes": []

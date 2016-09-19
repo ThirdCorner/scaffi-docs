@@ -1,0 +1,28 @@
+<div class="route route-server.concepts.configuration">
+    <section>
+        <h1>Configuration</h1>
+        <p>Scaffi Server is all about configurability. All modules(components, services, etc) are initialized via the  <mark>scaffi-server.json</mark> and <mark>scaffi-server.private.json</mark> files based on what properties that module needs.</p>
+        <p><b>scaffi-server.json</b>: A config that is added to any repo and passed to anyone that clones the project. This holds information like port and database type (mysql, mssql) that should never change despite what environment you’re running the app in.</p>
+        <p><b>scaffi-server.private.json</b>: A config file that is excluded from a repo. This file is auto-generated whenever <mark>yo scaffi:mode</mark> is called. Where it generates off of is from the <mark>.json</mark> files in <mark>src/server/config</mark>. As you'll see from the naming convention, these are configs based off the environment mode that get's set. This is how you store different credentials for production vs QA, etc</p>
+        <p>When the server loads, it combines these two files into one config object, that is then passed into each of your modules.</p>
+
+        <h2>Another Config Setup</h2>
+        <p>There’s actually a third way to configure Scaffi Server. This comes into play when you have something else handling the server aspect of your webpage, like IIS, and are using Scaffi Server as a module component in IIS via IIS-Node.</p>
+        <p>In the server/index.js file, there’s a line that looks like: </p>
+
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>If you're using IIS, you'll probably want it to determine the environment. To do that, we do the following:</p>
+
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>This takes the same structure that the <mark>scaffi-server*.json</mark> files take, so reference those if you need to pass something in dynamically.</p>
+        <p>One thing to note about how the configs are combined. When the server starts up, it looks at things in this order, and items that come later will override information already set:</p>
+        <ol>
+            <li>scaffi-server.config</li>
+            <li>“initialize” config</li>
+            <li>scaffi-server.private.config</li>
+        </ol>
+        <p>What this means is that if you pass the database user in both the initialize function and in scaffi-server.private, the info in the private config will trump what’s passed through the initialize function. The reason for this is so that you can develop locally using a scaffi-server.private.config and have Scaffi Server work as an actual server, then when you deploy to a server with IIS-Node, if you filled in the initialize vars and don’t create a private.json, things will get passed naturally through the initialize function. This is to avoid having to run an entire IIS server just to develop, when you can use Scaffi Server as a lone instance.</p>
+    </section>
+</div>

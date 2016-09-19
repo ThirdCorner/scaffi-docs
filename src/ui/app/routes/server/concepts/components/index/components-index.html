@@ -1,0 +1,92 @@
+<div class="route route-server.concepts.components.index">
+    <section>
+        <h1>Components</h1>
+        <p>A component in Scaffi Server acts similarly to a component in Scaffi UI: It's a class that compartmentalizes logic to be used throughout the app. In Scaffi Server, the main purpose of a component is to wrap any node modules brought in that need configuring.</p>
+    </section>
+    <section>
+        <h2>Structure</h2>
+        <p>The structure of a component is simplistic in nature. Here’s a quick reference: </p>
+
+        <h3>component.json</h3>
+        <code-example type="json" code="vm.getCode1()"></code-example>
+
+        <h4>dependencies</h4>
+        <p>An array of strings that indicates which components you need preloaded before your component can run.</p>
+
+        <h4>params</h4>
+        <p>This determines the public and private variables your component needs to run. When someone installs an instance of your app, they will run ‘yo scaffi:setup’ which will then have them fill in the information required by each component that has been marked as private. This lets you distinguish what information can be saved to svn (public) and what needs to be provided on each installed instance (private). A good distinguishing example is database configs: </p>
+        <ul class="list">
+            <li>database ‘type’ (mssql, mysql) is something you’d want to store publically that all instances of your app (whether testing or prod) will need.</li>
+            <li>database ‘username’ and ‘password’ is something you’d store privately. You don’t want to put that information in svn, and more importantly, likely each instance of your server is going to be different for authentication.</li>
+        </ul>
+
+        <h3>component.js</h3>
+        <h4>setup(componentName, componentName, ...)</h4>
+        <p>Runs when the server is first going through and initializing all components. Based on what dependencies you indicate will determine when your component is first loaded in relation to all components. When your component’s setup function does finally get called, it will be injected with the instance of each dependency you declared in your component.json file. </p>
+        <h4>run(componentName, componentName, ...)</h4>
+        <p>Run gets called once all components are setup. Just like setup, it gets injected with whatever dependencies you need. </p>
+
+        <p>One thing to note about setup: If you want anything to be accessible when a component is declared as a dependency, you want to return whatever you’d like available, whether it be the instance of your class or an API hook. Or call this.set() to store it for availability later.
+        </p>
+        <p>Let’s look at a few examples to clarify this.</p>
+    </section>
+    <section>
+        <h3>Component initializing an npm/github module</h3>
+        <p>You’ll do this mostly when you need to bring in a module to attach to your server. Once you’ve installed the package via npm and run <mark>yo scaffi:component</mark> and select the <mark>Server</mark> option, you’ll get template files that you’ll then fill in. Let’s say we’re adding <mark>express-session</mark>. Here’s what your component files would look like.</p>
+
+        <mark>components/session/session.json</mark>
+        <code-example type="json" code="vm.getCode2()"></code-example>
+
+        <mark>components/session/session.js</mark>
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+
+        <p>For this session component, we’re storing sessions in redis, so we need two dependencies to be loaded for this component: app and redis-connect.</p>
+        <p>On line 4, we’re bringing in the npm module <mark>express-session</mark> because that’s what’s actually getting implanted in the app server. </p>
+        <p>In setup, we already have instances of app and redis-connect accessible because of dependency injection. A little info on these two modules:</p>
+        <ul class="list">
+            <li><label>app</label>: A generic express app that you’d instantiate when you make a node server. As you can see in line 16, once our session is initialized, we’re attaching it to express as per express-session’s documentation.</li>
+            <li><label>redis-connect</label>: This is actually a wrapper component for the <mark>redis</mark> module. As of this writing, it exposes one API hook (‘registerStore’) which takes the <mark>express-session</mark> module to tell it how it’s storing sessions.</li>
+        </ul>
+
+        <p>You’ll also notice <mark>this.getParam()</mark> bits scattered throughout the class. This is how you access any public and private params you declared in your session.json file. Public and private params get condescend into one store, so in terms of the setup and run functions, we can call them by name directly. Whatever information the server setup user filled in will get funneled to us via <mark>this.getParam(“param-name”)</mark>.</p>
+        <p>As for a general run-down of the class, we’re setting params in a config object that we then pass to express-session to get an instance of the module. We attach that to our express app which will attach it to each req route we get in express. Finally, we return the session instance in case any other components need access to it. </p>
+    </section>
+    <section>
+        <h3>Component gluing multiple modules</h3>
+        <p>In this situation, we need to do something custom with one or more npm modules that isn’t as simple as initializing an npm module with various config options. Let’s say we need to build a task queue that reacts to REST calls. Once we generate our component, let’s fill it in.</p>
+
+        <mark>components/task-queue/task-queue.json</mark>
+        <code-example type="json" code="vm.getCode4()"></code-example>
+
+        <mark>components/task-queue/task-queue.js</mark>
+        <code-example type="javascript" code="vm.getCode5()"></code-example>
+
+        <p>Based on the task-queue.json, the only thing we’re declaring is that we need bull (Queue manager) and router (wrapper for Express routes). We don’t need any config params from the server installer, though we could technically add a ‘queue-name’ param if we wanted to generalize this component a bit more. </p>
+        <p>For the task-queue.js, these are the steps it’s taking:</p>
+        <ol>
+            <li>Tell bull to create a new <mark>Tasks</mark> queue. Bull uses redis, so when we run <mark>yo scaffi:setup</mark> on the server, it'll prompt us for our redis details.</li>
+            <li>Add a listener to the queue that will be called when a job needs to be processed. As you can see, that logic is moved to the <mark>processJob()</mark> function later in the class so that we can organize logic properly.</li>
+            <li>Add an http route to the express server. When you call <mark>http://localhost:port/api/tasks</mark> from the browser, it will access bull and return an array of tasks waiting to be processed. The UI can then hook up to this route and display the data properly.</li>
+            <li>We’re returning the queue instance. This will let us access it in other components by simpling adding ‘task-queue’ as a dependency.</li>
+        </ol>
+
+        <p>We don’t need to put any logic in ‘run’, so that’s the gist of our task-queue component. We’ve glued together several unrelated modules to make a new and exciting component for immediate consumption. </p>
+        <p>Let’s say we want to make this task-queue component a bit more customizable. We have an image-task-queue and we want to add a few more event listeners. Because we’re returning the queue instance in setup of task-queue, we’ll have access to it in our new component. </p>
+
+        <mark>components/image-task-queue/image-task-queue.json</mark>
+        <code-example type="json" code="vm.getCode6()"></code-example>
+
+        <mark>components/image-task-queue/image-task-queue.js</mark>
+        <code-example type="javascript" code="vm.getCode7()"></code-example>
+
+        <p>In this component, all we need is access to the task-queue component. TaskQueue will do all the setup, so by the time <mark>ImageTaskQueue.setup</mark> is called, taskQueue will already be registered with bull and redis. </p>
+        <p>Here, we’re bringing in one of the Scaffi’s services: <mark>UiNotifyService</mark>. A service in Scaffi is a class definition that defines the api hooks to talk with another system, whether it’s an api to an external data source or the UI. <mark>UiNotifyService</mark> is a socket service that routes information back to the UI.</p>
+        <p>When the task-queue component runs a job or errors on a job, if the job is an image type job, it will fire the events we declared here, sending the status update via the <mark>UiNotifyService</mark> back to the UI. Assuming we set the UI up correctly to display those statuses, any user expecting that information will be notified of it immediately, without refreshing their page.</p>
+        <p>The final piece in here is the return statement. Here, we’re saying that if any other component references <mark>image-task-queue</mark> as a dependency, they will have access to add further listeners to this queue. If we needed a component that handled paused jobs, we could do the following:</p>
+
+        <mark>component/paused-image-queue/paused-image-queue.js</mark>
+        <code-example type="javascript" code="vm.getCode8()"></code-example>
+
+        <p>This tells image-task-queue component that we want to send a status update to the UI whenever a job changes to the status ‘paused’. Then, we’re gonna console.log that for any system admin that happens to look at the console. ‘paused’ is a bull queue event, so bull will emit that event whenever the job changes.</p>
+    </section>
+</div>

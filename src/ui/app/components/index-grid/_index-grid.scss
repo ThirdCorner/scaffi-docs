@@ -1,0 +1,13 @@
+.component-index-grid {
+  .tile {
+    cursor: pointer;
+    padding: 20px 0 20px 0;
+    margin: 10px;
+    background-color: lightgray;
+    text-align: center;
+    &:hover {
+      background-color: darkgray;
+
+    }
+  }
+}

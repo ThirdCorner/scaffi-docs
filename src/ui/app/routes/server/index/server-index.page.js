@@ -27,6 +27,7 @@ class ServerIndex extends AbstractPage {
 		
 		this.$state = $state;
 		this.$scope = $scope;
+		this.ROUTE = ROUTE;
 	}
 
 }

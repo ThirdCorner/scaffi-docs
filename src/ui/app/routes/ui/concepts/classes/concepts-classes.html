@@ -1,0 +1,39 @@
+<div class="route route-ui.concepts.classes">
+    <section>
+        <h1>Classes</h1>
+        <p>For more information on the changes between standards, check out http://es6-features.org/#ClassDefinition</p>
+    </section>
+    <section>
+        <h2>Basic Class</h2>
+        <p>A basic class you’ll see when you generate a page is this:</p>
+
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>This is the base essence of a class. All classes come with a <mark>constructor</mark> function which gets called when the class is loaded.</p>
+        <p>In order to use this class outside a file, you add the syntax <mark>export default ClassName;</mark>. This will allow you to instantiate the class in other parts of the program. </p>
+        <p>If the class has any decorators, then Angular will be in charge of loading and instantiating for you.</p>
+    </section>
+    <section>
+        <h2>Exporting and Reusing</h2>
+        <p>Let’s say you wrote the following helper class that you want to use throughout your app.</p>
+
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>Let’s say you have a page in <mark>app/routes/starting/index.page.js</mark>.</p>
+
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+
+        <p>As you can see, you just need to import the class somewhere above your current class and any decorators with the line:</p>
+
+        <code-example type="javascript" code="vm.getCode4()"></code-example>
+
+        <p>Then, instantiate the class in your constructor:</p>
+
+        <code-example type="javascript" code="vm.getCode5()"></code-example>
+    </section>
+    <section>
+        <h2>Extends</h2>
+        <p>With the advent of ES6, we can extend classes properly in Javascript. This means that you can declare a base class of functionality for a page, and then make sub pages that extend that base class to tweak your pages in different ways.</p>
+        <p>For more information, see <a href="http://es6-features.org/#ClassInheritance">Class Inheritance</a></p>
+    </section>
+</div>

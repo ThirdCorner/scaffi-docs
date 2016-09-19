@@ -4,7 +4,7 @@ import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: fals
 import template from './concepts-index.html!text';
 
 // export-params-start
-const ROUTE = 'app.ui.concepts.index';
+const ROUTE = 'app.server.concepts.index';
 const PARAMS = {
 	url: '/',
 	template: template,
@@ -25,9 +25,11 @@ class ConceptsIndex extends AbstractPage {
 	constructor($state, $scope){
 		super($scope);
 		
+		this.ROUTE = ROUTE;
 		this.$state = $state;
 		this.$scope = $scope;
-		this.ROUTE = ROUTE;
+		
+		
 	}
 
 }

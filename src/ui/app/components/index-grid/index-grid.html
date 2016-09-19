@@ -1,0 +1,9 @@
+<div class="component component-index-grid">
+
+    <h1>{{vm.parentRoute.displayText}}</h1>
+    <div layout="row">
+        <div ng-repeat="item in vm.subRoutes" class="tile" flex="25" ui-sref="{{item.sref}}">
+            {{item.displayText}}
+        </div>
+    </div>
+</div>

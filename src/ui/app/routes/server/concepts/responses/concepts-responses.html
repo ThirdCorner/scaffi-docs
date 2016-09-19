@@ -1,0 +1,40 @@
+<div class="route route-server.concepts.responses">
+    <section>
+        <h1>Responses</h1>
+        <p>In Expressjs, whenever you need to return a response back to the browser, you’d do something like this: </p>
+
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+
+        <p>Or if you need to send back an error to the UI:</p>
+
+        <code-example type="javascript" code="vm.getCode2()"></code-example>
+
+        <p>While intrinsically not horrible, it doesn't provide a repeatable structure that the UI can follow. Scaffi UI always expects a json response unless you're sending media back. Or for errors, you need to send a specific structure so that the UI can respond accordingly. So rather than using Express' response function, you'll want to use Scaffi Server wrapper functions. They’re all embedded in any res you might manipulate, so it’s not much of a change.</p>
+
+        <p>Normally you’d have something like this:</p>
+
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+
+        <p>For successes, we instead want to do this: </p>
+
+        <code-example type="javascript" code="vm.getCode4()"></code-example>
+
+        <p>What this'll do is, if you pass it a string, it'll make sure to send it as an object back to the UI so that the UI doesn’t assume an error happened. </p>
+        <p>If we need to send back an error:</p>
+
+        <code-example type="javascript" code="vm.getCode5()"></code-example>
+
+        <p>This will automatically get wrapped in an object and send back to the UI so that it can read the structure. You don’t have to provide either params. It’ll just send back a sparse error structure.</p>
+
+    </section>
+    <section>
+        <h2>APIs</h2>
+        <p>These get injected into any response object you’d handle in Expressjs:</p>
+        <p>res.sendSuccess(data)<br>
+            res.sendError(errorMsg, stackTrace)<br>
+            res.sendUnauthorized(errorMsg, stackTrace)<br>
+            res.sendNotFound(errorMsg, stackTrace)<br>
+        </p>
+
+    </section>
+</div>
