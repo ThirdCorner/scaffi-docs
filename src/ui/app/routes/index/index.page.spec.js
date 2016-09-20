@@ -9,7 +9,7 @@ describe("Test Form", ()=>{
 			browser.get("http://scaffi-docs.azurewebsites.net");
 		});
 		it("should have browsed", ()=>{
-			expect(element(by.id("logo")).isPresent()).to.eventually.be.true;
+			expect(element(by.id("logos")).isPresent()).to.eventually.be.true;
 		})
 
 		
