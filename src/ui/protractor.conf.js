@@ -14,12 +14,12 @@ exports.config = {
 	keepAlive: true,
 	framework: 'mocha',
 	mochaOpts:{
-		reporter:'spec',
+		reporter:'min',
 		slow:5000,
 		timeout: 30000,
 		enableTimeouts: false,
 		fullTrace: false,
-		colors: true
+		colors: false
 	},
 	specs: ["app/**/*.spec.js"],
 	plugins: [
