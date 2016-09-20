@@ -3,7 +3,7 @@ const root = path.dirname(__dirname);
 
 exports.config = {
 	seleniumArgs: ['-browserTimeout=120'],
-	seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
+	//seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 	allScriptsTimeout: 30000,
 	capabilities: {
 		'phantomjs.binary.path': root + "/ui/test/phantomjs/phantomjs.exe",
