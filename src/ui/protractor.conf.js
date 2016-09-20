@@ -79,10 +79,11 @@ exports.config = {
 		//    },
 		//    takeScreenShotsOnlyForFailedSpecs: true
 		//}));
+	},
+	afterLaunch: function(exitCode) {
+		if(exitCode == 1){
+			console.log("TESTING HAS FAILED; KILL BUILD");
+			throw new Error("TESTING HAS FAILED; KILL BUILD");
+		}
 	}
-	// ----- Options to be passed to minijasminenode -----
-	//jasmineNodeOpts: {
-	//    // If true, display spec names.
-	//    isVerbose: true
-	//}
 };
