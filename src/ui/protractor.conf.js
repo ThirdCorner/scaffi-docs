@@ -80,10 +80,10 @@ exports.config = {
 		//    takeScreenShotsOnlyForFailedSpecs: true
 		//}));
 	},
-	afterLaunch: function(exitCode) {
-		if(exitCode == 1){
-			console.log("TESTING HAS FAILED; KILL BUILD");
-			throw new Error("TESTING HAS FAILED; KILL BUILD");
-		}
-	}
+	// afterLaunch: function(exitCode) {
+	// 	if(exitCode == 1){
+	// 		console.log("TESTING HAS FAILED; KILL BUILD");
+	// 		throw new Error("TESTING HAS FAILED; KILL BUILD");
+	// 	}
+	// }
 };
