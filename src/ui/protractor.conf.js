@@ -98,7 +98,7 @@ exports.config = {
 				console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
 			});
 		}
-		printSessionId("Insert Job Name Here");
+		printSessionId("Scaffi Test");
 	}
 	// afterLaunch: function(exitCode) {
 	// 	if(exitCode == 1){

@@ -11,7 +11,9 @@ describe("Test Form", ()=>{
 		it("should have browsed", ()=>{
 			expect(element(by.id("logo")).isPresent()).to.eventually.be.true;
 		})
-
+		it("should have browsed", ()=>{
+			expect(element(by.id("spazzy")).isPresent()).to.eventually.be.true;
+		})
 		
 	});
 
