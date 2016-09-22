@@ -2,26 +2,19 @@ var path = require('path');
 const root = path.dirname(__dirname);
 
 exports.config = {
-
-	sauceUser: "jpxd",
-	sauceKey: "05cef575-9f83-4893-8c76-f94fd3c457d6",
-
-	//seleniumArgs: ['-browserTimeout=120'],
-	//seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
+	seleniumArgs: ['-browserTimeout=120'],
+	//seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
 	allScriptsTimeout: 30000,
-
-	multiCapabilities: [{
-		browserName: 'chrome',
-		version: '41',
-		platform: 'Windows 7',
-		name: "chrome-tests",
-		shardTestFiles: true,
-		maxInstances: 25
-	}],
+	capabilities: {
+		'phantomjs.binary.path': root + "/ui/test/phantomjs/phantomjs.exe",
+		'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false'],
+		'version' : '',
+		'platform': 'ANY'
+	},
 	keepAlive: true,
 	framework: 'mocha',
 	mochaOpts:{
-		reporter:'spec',
+		reporter:'min',
 		slow:5000,
 		timeout: 30000,
 		enableTimeouts: false,
@@ -45,10 +38,7 @@ exports.config = {
 	 * the filename string.
 	 */
 	onPrepare: function() {
-
-		var caps = browser.getCapabilities()
-
-		//browser.driver.manage().window().setSize(1024,768);
+		browser.driver.manage().window().setSize(1024,768);
 		
 		// Adds ES6 features to testing
 		require('babel-register')({
@@ -57,7 +47,7 @@ exports.config = {
 		
 		// protractor.globals = require('./src/app/globals');
 		// global.TestPage = require('./src/app/core/tests/route/test-page');
-		//	global.mocha = require("mocha");
+	//	global.mocha = require("mocha");
 		global.chai = require('chai');
 		var promised = require('chai-as-promised');
 		global.chai.use(promised);
@@ -90,15 +80,6 @@ exports.config = {
 		//    takeScreenShotsOnlyForFailedSpecs: true
 		//}));
 	},
-	onComplete: function() {
-
-		var printSessionId = function(jobName){
-			browser.getSession().then(function(session) {
-				console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
-			});
-		}
-		printSessionId("Insert Job Name Here");
-	}
 	// afterLaunch: function(exitCode) {
 	// 	if(exitCode == 1){
 	// 		console.log("TESTING HAS FAILED; KILL BUILD");

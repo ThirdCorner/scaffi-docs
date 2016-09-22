@@ -1,0 +1,4 @@
+---
+  language: "javascript"
+  framework: "protractor"
+  configPath: "src/ui/protractor.conf.js"
