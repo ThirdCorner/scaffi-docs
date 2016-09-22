@@ -6,7 +6,7 @@ describe("Test Form", ()=>{
 	});
 	describe("Test Browse", ()=>{
 		before(()=>{
-			browser.get("http://scaffi-docs.azurewebsites.net");
+			browser.get("http://scaffi-docs-qa.azurewebsites.net");
 		});
 		it("should have browsed", ()=>{
 			expect(element(by.id("logo")).isPresent()).to.eventually.be.true;
