@@ -3,8 +3,8 @@ const root = path.dirname(__dirname);
 
 exports.config = {
 
-	sauceUser: "jpxd",
-	sauceKey: "05cef575-9f83-4893-8c76-f94fd3c457d6",
+	sauceUser: process.env.sauceUser,
+	sauceKey: process.env.sauceKey,
 
 	//seleniumArgs: ['-browserTimeout=120'],
 	//seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
@@ -92,6 +92,7 @@ exports.config = {
 	},
 	onComplete: function() {
 
+		
 		var printSessionId = function(jobName){
 			browser.getSession().then(function(session) {
 				console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
