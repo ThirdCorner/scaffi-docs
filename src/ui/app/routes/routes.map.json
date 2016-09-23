@@ -309,6 +309,14 @@
               "routes": []
             }
           ]
+        },
+        {
+          "id": "api-hooks",
+          "displayText": "Api Hooks",
+          "sref": "app.server.api-hooks",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": []
         }
       ]
     },

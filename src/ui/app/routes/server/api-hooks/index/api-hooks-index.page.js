@@ -1,10 +1,10 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './index.html!text';
+import template from './api-hooks-index.html!text';
 
 // export-params-start
-const ROUTE = 'app.index';
+const ROUTE = 'app.server.api-hooks.index';
 const PARAMS = {
 	url: '/',
 	template: template,
@@ -18,18 +18,19 @@ const PARAMS = {
 // export-params-end
 
 //start-non-standard
-@RouteConfig(ROUTE, PARAMS) 
+@RouteConfig(ROUTE, PARAMS)
 //end-non-standard
 
-class Index extends AbstractPage {
+class ApiHooksIndex extends AbstractPage {
 	constructor($state, $scope){
 		super($scope);
-		
+
+		this.ROUTE = ROUTE;
 		this.$state = $state;
 		this.$scope = $scope;
 	}
 
 }
 
-export default Index;
+export default ApiHooksIndex;
 export {ROUTE, PARAMS};

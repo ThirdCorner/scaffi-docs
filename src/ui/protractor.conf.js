@@ -18,9 +18,16 @@ exports.config = {
 		shardTestFiles: true,
 		maxInstances: 25
 	}],
+	// capabilities: {
+	// 	'phantomjs.binary.path': root + "/ui/test/phantomjs/phantomjs.exe",
+	// 	'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false'],
+	// 	'version' : '',
+	// 	'platform': 'ANY'
+	// },
 	keepAlive: true,
 	framework: 'mocha',
 	mochaOpts:{
+		bail: true,
 		reporter:'spec',
 		slow:5000,
 		timeout: 30000,
@@ -28,7 +35,7 @@ exports.config = {
 		fullTrace: false,
 		colors: false
 	},
-	specs: ["app/**/*.spec.js"],
+	specs: ["app/**/*.e2e.js"],
 	plugins: [
 		// 	{
 		// 	path: './node_modules/protractor/plugins/console/index.js',
@@ -62,6 +69,8 @@ exports.config = {
 		var promised = require('chai-as-promised');
 		global.chai.use(promised);
 		global.expect = chai.expect;
+
+		global.session = require('./app/testing/session');
 
 		
 		/**
