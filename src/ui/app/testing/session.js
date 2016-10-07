@@ -8,7 +8,8 @@ import _ from "lodash";
 class Session {
 	constructor(){
 		this.clearSession();
-		this.baseUrl = "http://scaffi-docs-qa.azurewebsites.net";
+		this.baseUrl = "http://localhost:5011";
+		//this.baseUrl = "http://scaffi-docs-qa.azurewebsites.net";
 		//this.baseUrl = ScaffiUi.config.getBaseUrl() || ScaffiUi.config.getLocalhostAddress();
 	}
 	clearSession(){
@@ -17,8 +18,12 @@ class Session {
 	getBaseUrl() {
 		return this.baseUrl;
 	}
-	go(url){
+	start(url){
 		this.clearSession();
+		this.go(url);
+	}
+	go(url){
+
 		url = url || "";
 		if(url.length && !_.startsWith(url, "/")) {
 			url += "/" + url;

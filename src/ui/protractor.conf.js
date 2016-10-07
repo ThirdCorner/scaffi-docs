@@ -10,20 +10,29 @@ exports.config = {
 	//seleniumAddress: 'http://ondemand.saucelabs.com:80/wd/hub',
 	allScriptsTimeout: 30000,
 
-	multiCapabilities: [{
-		browserName: 'chrome',
-		version: '41',
-		platform: 'Windows 7',
-		name: "chrome-tests",
-		shardTestFiles: true,
-		maxInstances: 25
-	}],
-	// capabilities: {
-	// 	'phantomjs.binary.path': root + "/ui/test/phantomjs/phantomjs.exe",
-	// 	'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false'],
-	// 	'version' : '',
-	// 	'platform': 'ANY'
-	// },
+	// multiCapabilities: [{
+	// 	browserName: 'chrome',
+	// 	version: '41',
+	// 	platform: 'Windows 7',
+	// 	name: "chrome-tests",
+	// 	shardTestFiles: true,
+	// 	maxInstances: 25
+	// }
+	// // 	,{
+	// // 	browserName: 'chrome',
+	// // 	version: '36',
+	// // 	platform: 'Windows 8',
+	// // 	name: "chrome-tests-win-8",
+	// // 	shardTestFiles: true,
+	// // 	maxInstances: 25
+	// // }
+	// ],
+	capabilities: {
+		'phantomjs.binary.path': root + "/ui/test/phantomjs/phantomjs.exe",
+		'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false'],
+		'version' : '',
+		'platform': 'ANY'
+	},
 	keepAlive: true,
 	framework: 'mocha',
 	mochaOpts:{
@@ -71,6 +80,7 @@ exports.config = {
 		global.expect = chai.expect;
 
 		global.session = require('./app/testing/session');
+		global.form = require("./app/testing/form");
 
 		
 		/**

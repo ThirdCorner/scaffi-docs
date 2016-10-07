@@ -36,9 +36,13 @@ body {
       max-width: 760px;
     }
   }
+  table {
+    width: 100%;
+  }
 }
 
 .code, mark{
   background-color: lightgray;
   padding: 0 5px 0 5px;
 }
+

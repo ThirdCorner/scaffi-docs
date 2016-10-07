@@ -1,0 +1,132 @@
+<div class="route route-server.api-hooks.app">
+    <section>
+        <h1>app</h1>
+        <p>This component is a direct wrapper for the Express.js app. Check out <a href="http://expressjs.com/en/4x/api.html#app">http://expressjs.com/en/4x/api.html#app</a> for more information.</p>
+        <h4>Example</h4>
+
+        <mark>/src/server/components/intercept.json</mark>
+        <code-example type="json" code="vm.getCode2()"></code-example>
+
+        <mark>/src/server/components/intercept.js</mark>
+        <code-example type="javascript" code="vm.getCode1()"></code-example>
+    </section>
+    <section>
+        <h3>res</h3>
+        <p>There's a few added functions to the res (response) object we get in express (<a href="http://expressjs.com/en/4x/api.html#res">http://expressjs.com/en/4x/api.html#res</a>).</p>
+    </section>
+    <section>
+        <h4>res.sendSuccess(data)</h4>
+        <p>Use when you want to return a json success to the api. If you send a string, this function will package it into a json object.</p>
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>data</td>
+                    <td>Scalar <br>|| Object <br>|| Array</td>
+                    <td>The response data you want to send.</td>
+                </tr>
+            </tbody>
+        </table>
+        <code-example type="javascript" code="vm.getCode3()"></code-example>
+    </section>
+    <section>
+        <h4>res.sendForbidden(errorMsg, stack)</h4>
+        <p>Use when you want to send a 403 HTTP response to the UI with troubleshoot data.</p>
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>errorMsg</td>
+                    <td>Scalar <br>|| Object <br>|| Array</td>
+                    <td>Whatever error message data you want to send back to the UI.</td>
+                </tr>
+                <tr>
+                    <td>stack</td>
+                    <td>Scalar <br>|| Object <br>|| Array</td>
+                    <td><mark>optional</mark> For use if you have a stacktrace you want to send back.</td>
+                </tr>
+            </tbody>
+        </table>
+        <code-example type="javascript" code="vm.getCode4()"></code-example>
+    </section>
+    <section>
+        <h4>res.sendUnauthorized(errorMsg, stack)</h4>
+        <p>Use when you want to send a 401 HTTP response to the UI with troubleshoot data.</p>
+        <table class="table">
+            <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>errorMsg</td>
+                <td>Scalar <br>|| Object <br>|| Array</td>
+                <td>Whatever error message data you want to send back to the UI.</td>
+            </tr>
+            <tr>
+                <td>stack</td>
+                <td>Scalar <br>|| Object <br>|| Array</td>
+                <td><mark>optional</mark> For use if you have a stacktrace you want to send back.</td>
+            </tr>
+            </tbody>
+        </table>
+        <code-example type="javascript" code="vm.getCode5()"></code-example>
+    </section>
+    <section>
+        <h4>res.sendError(errorMsg, stack)</h4>
+        <p>Use when you want to send a 500 HTTP response to the UI with troubleshoot data.</p>
+        <table class="table">
+            <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>errorMsg</td>
+                <td>Scalar <br>|| Object <br>|| Array <br> || Error</td>
+                <td>Whatever error message data you want to send back to the UI. You can also pass an Error class object.</td>
+            </tr>
+            <tr>
+                <td>stack</td>
+                <td>Scalar <br>|| Object <br>|| Array</td>
+                <td><mark>optional</mark> For use if you have a stacktrace you want to send back. If you send an Error object in errorMsg, the stacktrace will get pulled out automatically.</td>
+            </tr>
+            </tbody>
+        </table>
+        <code-example type="javascript" code="vm.getCode6()"></code-example>
+    </section>
+    <section>
+        <h4>res.sendNotFound(errorMsg, stack)</h4>
+        <p>Use when you want to send a 404 HTTP response to the UI with troubleshoot data.</p>
+        <table class="table">
+            <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>errorMsg</td>
+                <td>Scalar <br>|| Object <br>|| Array</td>
+                <td>Whatever error message data you want to send back to the UI.</td>
+            </tr>
+            <tr>
+                <td>stack</td>
+                <td>Scalar <br>|| Object <br>|| Array</td>
+                <td><mark>optional</mark> For use if you have a stacktrace you want to send back.</td>
+            </tr>
+            </tbody>
+        </table>
+        <code-example type="javascript" code="vm.getCode7()"></code-example>
+    </section>
+</div>

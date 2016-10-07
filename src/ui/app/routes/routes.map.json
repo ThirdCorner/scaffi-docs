@@ -316,7 +316,15 @@
           "sref": "app.server.api-hooks",
           "isDisplayable": true,
           "icon": "",
-          "routes": []
+          "routes": [
+            {
+              "id": "app",
+              "displayText": "app",
+              "sref": "app.server.api-hooks.app",
+              "isDisplayable": true,
+              "icon": ""
+            }
+          ]
         }
       ]
     },

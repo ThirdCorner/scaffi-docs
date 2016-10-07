@@ -1,16 +1,20 @@
 'use strict';
 import session from '../../testing/session';
 import request from 'request';
+import form from '../../testing/form';
 describe("Test Form", ()=>{
 	describe("Test Browse", ()=>{
 		it("should have browsed", ()=>{
-			session.go("/overview");
+			session.start("/overview");
 		});
 		it("should have logo", ()=>{
 			expect(element(by.id("logo")).isPresent(), "Has Logo").to.eventually.be.true;
 		});
 		it("should have specific logo", ()=>{
 			expect(element(by.tagName("h4")).getText()).to.eventually.equal("Overview");
+		});
+		it("should find form",()=>{
+			form.fill("_form", {});
 		});
 		
 	});
