@@ -46,11 +46,11 @@
         <p class="command">yo scaffi:start server</p>
         <p>If everything’s connected properly, you should see an output of:</p>
 
-        <img src="/images/getting-started-server-1st.png" />
+        <img src="images/getting-started-server-1st.png" />
 
         <p>You should be able to browse to it in chrome and get the following:</p>
 
-        <img src="/images/getting-started-server-2nd.png" />
+        <img src="images/getting-started-server-2nd.png" />
 
         <p>If you're getting a sequelize error, you need to configure a few things: <a ui-sref="app.troubleshooting.sequelize.connection()">Troubleshooting Sequelize Connections</a> </p>
 
@@ -67,7 +67,7 @@
 
         <p>This sets up a classic CRUD route that the UI expects to be there. When the server restarts, it should say <span class="code">DB CONNECTED</span> again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
 
-        <img src="/images/getting-started-server-3rd.png" />
+        <img src="images/getting-started-server-3rd.png" />
 
         <p>There’s no data in the database currently so this is expected.</p>
     </section>
@@ -76,19 +76,19 @@
         <p>Now’s the moment of truth: does the UI hook up to the DB and back like it should? Let’s test it out. Remember, we already switched out of prototype mode, so when we start the UI, it's going to be looking for a server now.</p>
         <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run <span class="code">yo scaffi:start ui</span>. When a new page opens in your browser, remember to open the console and refresh the page. If we click the <span class="code">Go to Products</span> link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to <span class="code">/api/products</span>.</p>
 
-        <img src="/images/getting-started-server-4th.png" />
+        <img src="images/getting-started-server-4th.png" />
 
         <p>This means it’s talking to that API Epilogue route that we just set up. Click <span class="code">Add a product</span>, put in some data and let’s see if POSTs work. Once it goes back to the products page, we can see that our item was added.</p>
 
-        <img src="/images/getting-started-server-5th.png" />
+        <img src="images/getting-started-server-5th.png" />
 
         <p>If we look at the database, we should have a row of data:</p>
 
-        <img src="/images/getting-started-server-6th.png" />
+        <img src="images/getting-started-server-6th.png" />
 
         <p>One last thing to check is if our PUT route works. If we click on the item we just made, change some data and submit, we see that PUTs are hooked up as well:</p>
 
-        <img src="/images/getting-started-server-7th.png" />
+        <img src="images/getting-started-server-7th.png" />
 
         <p>And that’s it. Integration is successfully setup from UI to Database and back, all without having to change anything in the UI to make it work.</p>
         <p>Hopefully you can see how powerful it is developing in prototype mode.</p>

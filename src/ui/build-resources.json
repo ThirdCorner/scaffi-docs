@@ -35,7 +35,6 @@
     "dependencies": [],
     "resources": {
       "css": {
-        "bootstrap/dist/css/*.min.css": "css",
         "ng-table": "css"
       }
     }

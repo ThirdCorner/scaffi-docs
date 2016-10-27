@@ -31,10 +31,10 @@
         <code-example type="html" code="vm.getSampleTwo()"></code-example>
 
         <p>Now let’s run <span class="code">yo scaffi:start ui</span>, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
-        <img src="/images/getting-started-project-2nd.png" />
+        <img src="images/getting-started-project-2nd.png" />
 
         <p>If you click the link, it should take you to <span class="code">http://localhost:5010/products/</span> and look like so:</p>
-        <img src="/images/getting-started-project-3rd.png" />
+        <img src="images/getting-started-project-3rd.png" />
 
         <p>What this illustrates is that when you generate routes and pages with <span class="code">yo scaffi</span>, the generators are handling <a href="https://github.com/angular-ui/ui-router/wiki">ui-router</a> setup for you. No more messing with confusing route setups; it’s all baked into the app structure. If you look in the <span class="code">routes/products/products.route.js</span>, you can see that any call to <span class="code">app.products</span> redirects to <span class="code">app.products.index</span>, which is in the <span class="code">products/index/products-index.page.js</span> controller. All ui-router routes start with <span class="code">app.</span> so if you end up generating a series of routes where the url looks like <span class="code">products/overview/protected/edit</span>, you can assume that the framework has added a ui-router call of <span class="code">app.products.overview.protected.edit</span> that you can reference in your code with 100% certainty. </p>
 
@@ -57,7 +57,7 @@
 
         <p>If you remember with angular, when you set a variable to <span class="code">this.variable</span> in the controller, and in the template, it comes out as <span class="code">vm.variable</span>. That’s why we have <span class="code">this.products = products</span> in the constructor, but in our actual template, it comes out as <span class="code">item in vm.products</span> in our ng-repeat. If you save these files and go back to your page, it should look like this:</p>
 
-        <img src="/images/getting-started-project-4th.png" />
+        <img src="images/getting-started-project-4th.png" />
 
         <p>We don’t have any data yet, but this should show off some of the ng-if logic happening in the template. If we were not in prototype mode, we would be getting an error from a failed network request because we have no server instance yet.</p>
 
