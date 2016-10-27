@@ -1,0 +1,6 @@
+{
+	"config": {
+		"environment": "production",
+		"domain": "http://scaffi-docs.azurewebsites.net"
+	}
+}

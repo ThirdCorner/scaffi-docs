@@ -1,7 +1,7 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './concepts-pages.html!text';
+import template from './concepts-pages.html';
 
 // export-params-start
 const ROUTE = 'app.ui.concepts.pages';
@@ -70,7 +70,7 @@ class ConceptsPages extends AbstractPage {
 	'use strict';
 
 	import {RouteConfig} from 'app/ng-decorators'; // jshint unused: false
-	import template from './billing-report-index.html!text';
+	import template from './billing-report-index.html';
 	
 	// export-params-start
 	const ROUTE = 'app.billing-report.index';

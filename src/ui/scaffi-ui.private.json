@@ -1,5 +1,7 @@
 {
-	"config": {
-		"environment": "localhost"
-	}
+  "config": {
+    "environment": "localhost",
+    "domain": "http://localhost:3000",
+    "platform": "web"
+  }
 }

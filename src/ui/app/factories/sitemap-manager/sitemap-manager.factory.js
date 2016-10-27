@@ -1,7 +1,7 @@
 'use strict';
 
 import {Factory} from 'scaffi-ui-core'; // jshint unused: false
-import SiteMap from '../../routes/routes.map.json!json';
+import SiteMap from '../../routes/routes.map.json';
 import _ from 'lodash';
 //start-non-standard
 @Factory({

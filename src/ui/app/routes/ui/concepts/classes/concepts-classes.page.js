@@ -1,7 +1,7 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './concepts-classes.html!text';
+import template from './concepts-classes.html';
 
 // export-params-start
 const ROUTE = 'app.ui.concepts.classes';
@@ -69,7 +69,7 @@ class ConceptsClasses extends AbstractPage {
 	import {RouteConfig} from ‘app/ng-decorators’;
 	
 	import StringHelper from ‘app/core/helpers/StringHelper’;
-	import template from './starting-index.html!text';
+	import template from './starting-index.html';
 	
 	const ROUTE = 'app.starting.index;
 	const PARAMS = {

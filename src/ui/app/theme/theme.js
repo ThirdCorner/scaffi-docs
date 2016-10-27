@@ -9,7 +9,7 @@ import './layout-error/layout-error.js';
 
 import 'angular-material';
 import 'angular-loading-bar';
-import 'hljs.js';
+import 'highlightjs';
 import 'ngclipboard';
 
 class Theme extends AbstractMaterial {

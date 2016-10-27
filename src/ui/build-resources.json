@@ -1,7 +1,71 @@
 {
-  "styles": [
-    "bower-material*/angular-material.css",
-    "angular-loading*/build/loading-bar.min.css",
-    "font-awesome"
-  ]
+  "common": {
+    "dependencies": [
+      "angular",
+      "angular-animate",
+      "angular-aria",
+      "angular-breadcrumb",
+      "angular-loading-bar",
+      "angular-messages",
+      "angular-sanitize",
+      "angular-material",
+      "angular-ui-router",
+      "body-parser",
+      "clean-css",
+      "font-awesome",
+      "lodash",
+      "moment",
+      "scaffi-ui-core",
+      "walkdir",
+      "highlightjs",
+      "momentjs"
+    ],
+    "resources": {
+      "fonts": {
+        "font-awesome": "font"
+      },
+      "css": {
+        "angular-loading/build/loading-bar.min.css": "css",
+        "font-awesome": "css",
+        "angular-material/angular-material.css": "css"
+      }
+    }
+  },
+  "web": {
+    "dependencies": [],
+    "resources": {
+      "css": {
+        "bootstrap/dist/css/*.min.css": "css",
+        "ng-table": "css"
+      }
+    }
+  },
+  "ios": {
+    "dependencies": [
+      "ionic-angular/release/js/ionic.js",
+      "ionic-angular/release/js/ionic-angular.js"
+    ],
+    "resources": {
+      "fonts": {
+        "ionic-angular/release/fonts/*": "font"
+      },
+      "css": {
+        "ionic-angular/release/css/ionic.min.css": "css"
+      }
+    }
+  },
+  "android": {
+    "dependencies": [
+      "ionic-angular/release/js/ionic.js",
+      "ionic-angular/release/js/ionic-angular.js"
+    ],
+    "resources": {
+      "fonts": {
+        "ionic-angular/release/fonts/*": "font"
+      },
+      "css": {
+        "ionic-angular/release/css/ionic.min.css": "css"
+      }
+    }
+  }
 }

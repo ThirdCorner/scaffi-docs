@@ -1,7 +1,7 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './concepts-exports-imports.html!text';
+import template from './concepts-exports-imports.html';
 
 // export-params-start
 const ROUTE = 'app.ui.concepts.exports-imports';
@@ -46,7 +46,7 @@ class ConceptsExportsImports extends AbstractPage {
 	
 	getCode3(){
 		return `
-	import template from './routes-side-nav.html!text';
+	import template from './routes-side-nav.html';
 		`;
 	}
 	getCode4(){

@@ -1,7 +1,7 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './getting-started-route-setup.html!text';
+import template from './getting-started-route-setup.html';
 
 // export-params-start
 const ROUTE = 'app.overview.getting-started.route-setup';
@@ -114,7 +114,7 @@ class GettingStartedRouteSetup extends AbstractPage {
 	'use strict';
 
 	import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; 
-	import template from './products-index.html!text';
+	import template from './products-index.html';
 	
 	import _ from 'lodash';
 	
