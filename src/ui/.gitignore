@@ -34,3 +34,4 @@ test-reports/
 .sass-cache
 
 !phantomjs.exe
+scaffi-ui.private.json
