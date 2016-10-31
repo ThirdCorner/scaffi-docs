@@ -2,6 +2,6 @@
   "config": {
     "environment": "development",
     "domain": "http://scaffi-docs-qa.azurewebsites.net",
-    "platform": "android"
+    "platform": "web"
   }
 }

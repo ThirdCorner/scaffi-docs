@@ -3,6 +3,8 @@
 import {RouteConfig, Component, AbstractComponent, View} from 'scaffi-ui-core'; // jshint unused: false
 import _ from 'lodash';
 
+import hljs from 'highlightjs';
+
 import template from './code-example.html';
 
 //start-non-standard
@@ -29,6 +31,8 @@ class CodeExample extends AbstractComponent{
 
 		$timeout(()=>{
 			var el = $element.find("code");
+			//angular.element(el).attr("language", $scope.type);
+			//angular.element(el).addClass($scope.type);
 			hljs.highlightBlock(el[0]);
 		},0)
 

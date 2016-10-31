@@ -17,14 +17,15 @@
       "moment",
       "scaffi-ui-core",
       "walkdir",
-      "highlightjs",
-      "momentjs"
+      "momentjs",
+      "highlightjs"
     ],
     "resources": {
       "fonts": {
         "font-awesome": "font"
       },
       "css": {
+        "highlightjs/styles/androidstudio.css": "css",
         "angular-loading/build/loading-bar.min.css": "css",
         "font-awesome": "css",
         "angular-material/angular-material.css": "css"

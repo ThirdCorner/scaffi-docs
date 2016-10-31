@@ -10,7 +10,6 @@ import './layout-error/layout-error.js';
 
 import 'angular-material';
 import 'angular-loading-bar';
-import 'highlightjs';
 import 'ngclipboard';
 
 import 'ionic-angular/release/js/ionic.js';
