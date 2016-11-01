@@ -4,6 +4,145 @@
         <p>Reference this page to see what structure upgrades happen between release changes. Manual steps indicate that a coder on the project has to do these things in order to bring the project up-to-date with the build process.</p>
     </section>
     <section>
+        <h2> Upgrade to 0.1.0 / Structure Upgrade #3</h2>
+        <p>Before you upgrade, you need to commit so that any unwanted changes can be fixed because some manual stuff is going to be needed to be done. If you get an error ENOTEMPTY when you run yo scaffi:update, delete the folder it's complaining about and run yo scaffi:update again.</p>
+        <p>Make sure to uninstall / reinstall generator-scaffi -g; Make sure you delete the jspm_packages and node_modules in the src/ui folder.</p>
+        <p>After you've run the update command and done all the manual changes belog and go to run 'yo scaffi:start web', you might run into things like Error: Cannot find module 'angular-bootstrap' from 'C:\Users\...' That means you have to switch out the import name with what's now in your package.json. For this instance, the name has changed to angular-ui-bootstrap.</p>
+        <h3>Manual Steps</h3>
+        <ul class="list">
+            <li>Move app/images and app/fonts into app/resources</li>
+            <li>
+                In <mark>src/ui/package.json</mark>, move jspm dependencies to dependencies; replace github with npm where possible; Delete the jspm section in package.json; You can decrease devDependencies to about this list:<br>
+                <pre>
+        "devDependencies": {
+            "chai": "^3.4.1",
+            "chai-as-promised": "^5.1.0",
+            "fs": "0.0.2",
+            "mocha": "^2.3.4",
+            "moment": "2.10.6",
+            "pathmodify": "^0.5.0",
+            "phantomjs": "latest",
+            "pre-commit": "1.1.1",
+            "protractor": "2.5.1"
+        },
+                    </pre><br>
+                For dependencies, you'll end up with a list around this:<br>
+                <pre>
+        dependencies: {
+            "angular": "^1.5.8",
+            "angular-animate": "^1.5.5",
+            "angular-aria": "^1.5.5",
+            "angular-breadcrumb": "0.4.1",
+            "angular-loading-bar": "0.9.0",
+            "angular-messages": "^1.5.5",
+            "angular-sanitize": "^1.5.5",
+            "angular-ui-bootstrap": "2.0.0",
+            "angular-ui-router": "^0.2.18",
+            "font-awesome": "4.4.0",
+            "ionic-angular": "^1.3.1",
+            "moment": "2.10.6",
+            "request-promise": "^1.0.2",
+            "lodash": "^3.10.1",
+            "scaffi-ui-core": "^0.1.0"
+        }
+                </pre><br>
+                Once you've pruned, you need to run <mark>yo scaffi:install-ui</mark>; If that gives errors, delete your node_modules and run it again.
+
+            </li>
+            <li>Find all import statements in <mark>src/ui/app</mark> with .ext!* and delete the !* bit. This is usually !text or !json. Your import should look something like <mark>import template from './page.html';</mark></li>
+            <li>If you added anything to the <mark>src/ui/build-resources.json</mark> file, you need to readd those in the new structure.</li>
+            <li>
+                Go into each <mark>src/ui/config</mark>, and add a domain property so the ui knows where the server is. If you don't have a domain for a build step, you can leave it blank, but you won't be able to build for that env until you do:<br>
+                <pre>
+            {
+                "config": {
+                    "environment": "localhost",
+                    "domain": "http://localhost"
+                }
+            }
+                </pre>
+            </li>
+            <li>
+                If you're gonna use mobile on the project, you must add the following to <mark>src/app/theme/theme.js</mark> <br>
+                <pre>
+            import 'ionic-angular/release/js/ionic.js';
+	        import 'ionic-angular/release/js/ionic-angular.js';
+                </pre>
+                <pre>
+            ###initialize
+            if(ScaffiUi.config.isMobilePlatform()){
+
+                this.addRequires(['ionic']);
+
+                this.getApp().config(($ionicConfigProvider)=>{
+                    $ionicConfigProvider.views.maxCache(0);
+                    $ionicConfigProvider.tabs.position("bottom");
+                });
+                this.getApp().run(($ionicPlatform) =>{
+                    $ionicPlatform.ready(function() {
+                        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+                        // for form inputs)
+                        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+                            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+                            cordova.plugins.Keyboard.disableScroll(true);
+
+                        }
+                        if (window.StatusBar) {
+                            // org.apache.cordova.statusbar required
+                            StatusBar.styleDefault();
+                        }
+                    });
+                });
+
+                this.getApp().config( ($urlRouterProvider)=>{
+                    $urlRouterProvider.otherwise('/');
+                });
+                this.getApp().run( ($timeout, $state)=>{
+
+                    // $timeout(function() {
+                    // 	$state.go('app.index');
+                    // }, 0);
+                });
+
+            }
+                </pre>
+
+            </li>
+        </ul>
+        <h3>Changelist</h3>
+        <ul class="list">
+            <li>Added things to project root .gitignore</li>
+            <li>Changed all config/*.private.json names to config/*.json except for localhost </li>
+            <li>Deleted scaffi-server.private.json (For cleanup reasons)</li>
+            <li>Upgrade scaffi-server-core@0.1.0</li>
+            <li>Got rid of script entries in package.json</li>
+            <li>Installed ionic-angular#1.3.1 in ui</li>
+            <li>Replaced contents in index.html to work with the new build structure</li>
+            <li>Added the new bundle structure to build-resources.json</li>
+            <li>Changed any instance of cli to ci in the config files</li>
+            <li>Deleted jspm_packages and jspm.config.js</li>
+            <li>Deleted gulp scripts</li>
+            <li>Install scaffi-ui-core@0.1.0</li>
+            <li>Added a mobile folder to the ui</li>
+        </ul>
+    </section>
+    <section>
+        <h2> Upgrade to 0.0.5 / Structure Upgrade #2</h2>
+        <h3>Manual Steps</h3>
+        <p>None</p>
+        <h3>Changelist</h3>
+        <ul class="list">
+            <li>Took out postinstall on ui/package.json</li>
+            <li>Add package json to root of project</li>
+            <li>Fix the jspm /system versions in ui</li>
+            <li>Add Build/web ios android folders with readme</li>
+            <li>Root level .gitignore, add node_modules and /build/web/server/*</li>
+            <li>Make sure nodemon is a dependancy in server</li>
+            <li>get rid of the npm starts in server/ui</li>
+            <li>Fix *-core references in ui and server packages</li>
+        </ul>
+    </section>
+    <section>
         <h2> Upgrade to 0.0.3 / Structure Upgrade #1</h2>
         <h3>Manual Steps</h3>
         <p>None</p>
