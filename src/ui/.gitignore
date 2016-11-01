@@ -18,14 +18,12 @@ coverage
 npm-debug.log
 node_modules
 
-# IDEs
-.idea/
 
 # JSPM
 jspm_packages/
 
 # Build and tmp folders for production
-build/
+/build/
 .tmp/
 
 # Test reports
@@ -34,4 +32,4 @@ test-reports/
 .sass-cache
 
 !phantomjs.exe
-scaffi-ui.private.json
+/scaffi-ui.private.json
