@@ -1,18 +1,18 @@
 'use strict';
 
 import {RouteConfig, AbstractPage} from 'scaffi-ui-core'; // jshint unused: false
-import template from './yo-scaffi-directive.html';
+import template from './yo-scaffi-install-ios.html';
 
 // export-params-start
-const ROUTE = 'app.ui.yo-scaffi.directive';
+const ROUTE = 'app.ui.yo-scaffi.install-ios';
 const PARAMS = {
-	url: '/directive',
+	url: '/install-ios',
 	template: template,
 	resolve: {
 
 	},
 	ncyBreadcrumb: {
-		 label: 'Directive' 
+		 label: 'Install Ios' 
 	}
 };
 // export-params-end
@@ -21,20 +21,15 @@ const PARAMS = {
 @RouteConfig(ROUTE, PARAMS)
 //end-non-standard
 
-class YoScaffiDirective extends AbstractPage {
+class YoScaffiInstallIos extends AbstractPage {
 	constructor($state, $scope){
 		super($scope);
 		
 		this.$state = $state;
 		this.$scope = $scope;
 	}
-	getCodeSample1(){
-		return `
-	<input type="text" ng-model="vm.formItem.Name" color-me />
-		`
-	}
 
 }
 
-export default YoScaffiDirective;
+export default YoScaffiInstallIos;
 export {ROUTE, PARAMS};
