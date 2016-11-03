@@ -191,6 +191,86 @@
               "isDisplayable": true,
               "icon": "",
               "routes": []
+            },
+            {
+              "id": "build",
+              "displayText": "Build",
+              "sref": "app.ui.yo-scaffi.build",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-android",
+              "displayText": "Install Android",
+              "sref": "app.ui.yo-scaffi.install-android",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-ios",
+              "displayText": "Install Ios",
+              "sref": "app.ui.yo-scaffi.install-ios",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-mobile",
+              "displayText": "Install Mobile",
+              "sref": "app.ui.yo-scaffi.install-mobile",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-server",
+              "displayText": "Install Server",
+              "sref": "app.ui.yo-scaffi.install-server",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-ui",
+              "displayText": "Install Ui",
+              "sref": "app.ui.yo-scaffi.install-ui",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "install-web",
+              "displayText": "Install Web",
+              "sref": "app.ui.yo-scaffi.install-web",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "ionic",
+              "displayText": "Ionic",
+              "sref": "app.ui.yo-scaffi.ionic",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "uninstall-server",
+              "displayText": "Uninstall Server",
+              "sref": "app.ui.yo-scaffi.uninstall-server",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "uninstall-ui",
+              "displayText": "Uninstall Ui",
+              "sref": "app.ui.yo-scaffi.uninstall-ui",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
             }
           ]
         },

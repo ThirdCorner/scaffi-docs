@@ -28,6 +28,13 @@ class YoScaffiComponent extends AbstractPage {
 		this.$state = $state;
 		this.$scope = $scope;
 	}
+	getCodeSample1(){
+		return `
+	<section>
+		<code-example></code-example>
+	</section>
+		`
+	}
 
 }
 

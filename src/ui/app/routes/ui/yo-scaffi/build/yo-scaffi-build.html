@@ -1,0 +1,16 @@
+<div class="route route-ui.yo-scaffi.build">
+    <section>
+        <h1>yo scaffi:build</h1>
+        <p>Call this when you want to build an app into a certain platform and environment.</p>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:build [platform] [environment]</p>
+        <p>Platforms: web, ios, android</p>
+        <p>Environment: prototype, localhost, development, ci, qa, production</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>As a broad overview, when this command is run, it bundles up any necessary app resources, and runs browserify on the app.js to generate the app script bundle. If it's building for mobile, it moves everything to the <mark>builds/ios|android</mark> folder. If it's building for web, it moves the front-end resources to the <mark>src/server/public</mark> folder, and then moves the entire server folder to <mark>builds/web/server</mark> folder.</p>
+    </section>
+</div>
