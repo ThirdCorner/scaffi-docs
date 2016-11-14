@@ -8,22 +8,22 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.pxd.devtest"
+            "PACKAGE_NAME": "com.pxd.hse"
         }
     },
     "dependent_plugins": {}
