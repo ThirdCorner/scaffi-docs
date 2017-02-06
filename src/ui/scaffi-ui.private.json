@@ -1,7 +1,7 @@
 {
   "config": {
-    "environment": "development",
-    "domain": "http://scaffi-docs-qa.azurewebsites.net",
-    "platform": "ios"
+    "environment": "localhost",
+    "domain": null,
+    "platform": "web"
   }
 }

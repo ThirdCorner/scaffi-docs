@@ -10,7 +10,7 @@
             <li>Type <span class="code">products</span> for the REST route</li>
         </ul>
 
-        <p>This creates an angular service that will call <span class="code">localhost:3000/api/products</span> when we're not in prototype mode. </p>
+        <p>This creates an angular service that will call <span class="code">localhost:3020/api/products</span> when we're not in prototype mode. </p>
         <p>Let’s create a route as well, which in url terms is a sub-route grouping. </p>
 
         <p class="command">yo scaffi:route</p>
@@ -19,9 +19,10 @@
             <li>Type <span class="code">products</span> for the name</li>
             <li>Type <span class="code">n</span> for no when it asks if this is a nested route</li>
             <li>Select <span class="code">basic</span> for the page template and hit enter</li>
+            <li>Type <span class="code">n</span> and hit enter for making a split controller</li>
         </ul>
 
-        <p>This creates a url route on <span class="code">localhost:5010/products</span> that we can add pages to it. </p>
+        <p>This creates a url route on <span class="code">localhost:4000/products</span> that we can add pages to. </p>
         <p>Before we start scaffi again, let’s go into <span class="code">rocking-form/src/ui/app/routes/products</span> in our IDE. You’ll notice it too has an index folder. When <span class="code">/products</span> or <span class="code">/products/</span> is called from the browser, this <span class="code">products/index/products-index.html</span> template page returns the content for that url. The controller for this template is <span class="code">products-index.page.js</span>.</p>
 
         <p>Open the <span class="code">products-index.html</span> page and paste this in:</p>
@@ -30,13 +31,13 @@
         <p>In <span class="code">rocking-form/src/ui/routes/index/index.html</span>, paste the following:</p>
         <code-example type="html" code="vm.getSampleTwo()"></code-example>
 
-        <p>Now let’s run <span class="code">yo scaffi:start ui</span>, and when it’s loaded, refresh the page with the console open. It should now look like this:</p>
+        <p>Now let’s run <span class="code">yo scaffi:start web</span>. It should now look like this:</p>
         <img src="images/getting-started-project-2nd.png" />
 
-        <p>If you click the link, it should take you to <span class="code">http://localhost:5010/products/</span> and look like so:</p>
+        <p>If you click the link, it should take you to <span class="code">http://localhost:4000/products/</span> and look like so:</p>
         <img src="images/getting-started-project-3rd.png" />
 
-        <p>What this illustrates is that when you generate routes and pages with <span class="code">yo scaffi</span>, the generators are handling <a href="https://github.com/angular-ui/ui-router/wiki">ui-router</a> setup for you. No more messing with confusing route setups; it’s all baked into the app structure. If you look in the <span class="code">routes/products/products.route.js</span>, you can see that any call to <span class="code">app.products</span> redirects to <span class="code">app.products.index</span>, which is in the <span class="code">products/index/products-index.page.js</span> controller. All ui-router routes start with <span class="code">app.</span> so if you end up generating a series of routes where the url looks like <span class="code">products/overview/protected/edit</span>, you can assume that the framework has added a ui-router call of <span class="code">app.products.overview.protected.edit</span> that you can reference in your code with 100% certainty. </p>
+        <p>What this illustrates is that when you generate routes and pages with <span class="code">yo scaffi</span>, the generators are handling the <a href="https://github.com/angular-ui/ui-router/wiki">ui-router</a> setup for you. No more messing with confusing route setups; it’s all baked into the app structure. If you look in the <span class="code">routes/products/products.route.js</span>, you can see that any call to <span class="code">app.products</span> redirects to <span class="code">app.products.index</span>, which is in the <span class="code">products/index/products-index.page.js</span> controller. All ui-router routes start with <span class="code">app.</span> so if you end up generating a series of routes where the url looks like <span class="code">products/overview/protected/edit</span>, you can assume that the framework has added a ui-router call of <span class="code">app.products.overview.protected.edit</span> that you can reference in your code. </p>
 
         <p>This is nice and spiffy, but this isn’t why we’re in prototype mode. </p>
 
@@ -49,7 +50,7 @@
 
         <code-example type="javascript" code="vm.getSampleFour()"></code-example>
 
-        <p>To give a high level view of this page, we’re importing stuff from Scaffi core and bringing in lodash. The <span class="code">ROUTE</span> and <span class="code">PARAMS</span> const that feed into <span class="code">@RouteConfig</span> are what tell ui-router where to put this page in the router loading process.</p>
+        <p>To give a high level view of this page: we’re importing stuff from Scaffi core and bringing in lodash. The <span class="code">ROUTE</span> and <span class="code">PARAMS</span> const that feed into <span class="code">@RouteConfig</span> are what tell ui-router where to put this page in the router loading process.</p>
 
         <p>The resolve in that <span class="code">PARAMS</span> object is making a fetch to the ProductsService class we generated earlier and is asking for all items from <span class="code">/api/products/</span>. Because we’re in prototype mode, this won’t actually hit the server but it’s important to note it here. Because <span class="code">ProductsService.get()</span> returns a promise, ui-router knows to wait for this promise to resolve before loading the controller and subsequently the page.</p>
 

@@ -12,9 +12,10 @@
             <li>Arrow down to the <span class="code">form</span> option and hit enter</li>
             <li>Hit space on both <span class="code">edit</span> and <span class="code">add</span> and hit enter. We’re telling Scaffi that this form will add and edit server data</li>
             <li>Say <span class="code">ProductsService</span> for the service, since that’s where we’re making our server calls from. Make sure you put <span class="code">ProductsService</span> with the small <span class="code">s</span> in there, otherwise you’ll get an injection error because ProductService does not exist.</li>
+            <li>Type <span class="code">n</span> and hit enter for making a split controller</li>
         </ul>
 
-        <p>In your IDE, if you take a look at <span class="code">/rocking-form/src/ui/app/routes/products</span>; we now have a folder called <span class="code">form</span>. You’d expect the url then to equate to <span class="code">localhost:5010/products/form</span>, right? The page generator for <span class="code">form</span> is specially set up to give us several route: <span class="code">/products/add</span> and <span class="code">/products/:ProductsServiceID/edit</span>. These should look very familiar if you’re used to classic REST setups. You can see these if you look at the <span class="code">products-form.page.js</span> page:</p>
+        <p>In your IDE, if you take a look at <span class="code">/rocking-form/src/ui/app/routes/products</span>; we now have a folder called <span class="code">form</span>. You’d expect the url then to equate to <span class="code">localhost:4000/products/form</span>, right? The page generator for <span class="code">form</span> is specially set up to give us several route: <span class="code">/products/add</span> and <span class="code">/products/:ProductsServiceID/edit</span>. These should look very familiar if you’re used to classic REST setups. You can see these if you look at the <span class="code">products-form.page.js</span> page:</p>
         <p>
             <b>Edit Route Portion</b><br>
             'app.products.edit'<br>
@@ -70,7 +71,7 @@
 
         <img src="images/getting-started-manipulate-fixtures-5th.png" />
 
-        <p>That’s the gist of prototype mode. You can bake in all your front-end logic, hook things up via REST as if you were working with a server and get through most all your functional requirements. Then, when everything is solidified, you can move on to configuring the server portion.</p>
+        <p>That’s the gist of prototype mode. You can bake in all your front-end logic, hook things up via services as if you were working with a server and get through most all your functional requirements. Then, when everything is solidified, you can move on to configuring the server portion.</p>
         <p>We'll be doing the server portion next.</p>
     </section>
     <section layout="row">
