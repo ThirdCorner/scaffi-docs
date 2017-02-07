@@ -9,15 +9,12 @@
         </ul>
 
         <p>For streamlining connections from UI to Database, we’re using Sequelize (<a href="http://docs.sequelizejs.com/en/latest/">http://docs.sequelizejs.com/en/latest/</a>) which comes with some spiffy packages to make integration easy-peasy.</p>
-        <p>First and foremost, let’s switch out of prototype mode:</p>
-        <p class="command">yo scaffi:mode</p>
-        <p>Be sure to select <b>localhost</b> as the new mode to work in.</p>
         <p>Before we start things up, open up <span class="code">/rocking-form/src/server/scaffi-server.json</span>. Since we’re connecting to sql, make the components object look like so:</p>
 
         <code-example type="json" code="vm.getSampleData1()"></code-example>
 
         <p>This tells sequelize that we’re connecting to mssql, and that we’re using epilogue as an add-on, which we’ll get into later.</p>
-        <p>In <span class="code">/rocking-form/src/server/scaffi-server.private.json</span>, replace with the following:</p>
+        <p>In <span class="code">/rocking-form/src/server/config/scaffi-server.localhost.private.json</span>, replace with the following:</p>
 
         <code-example type="json" code="vm.getSampleData2()"></code-example>
 
@@ -42,15 +39,15 @@
         <code-example type="sql" code="vm.getSampleSql()"></code-example>
 
 
-        <p>With all those changes made, in a CMD window, you should be able to run the command:</p>
-        <p class="command">yo scaffi:start server</p>
+        <p>With all those changes made, in a CMD window, run the mode command:</p>
+        <p class="command">yo scaffi:mode localhost</p>
+
+        <p>This will take us out of prototype mode and move all the config options we added to <span class="code">config/scaffi-server.localhost.private.json</span> to <span class="code">scaffi-server.private.json</span> which is what the server loads each time it runs.</p>
+
+        <p class="command">yo scaffi:start web</p>
         <p>If everything’s connected properly, you should see an output of:</p>
 
         <img src="images/getting-started-server-1st.png" />
-
-        <p>You should be able to browse to it in chrome and get the following:</p>
-
-        <img src="images/getting-started-server-2nd.png" />
 
         <p>If you're getting a sequelize error, you need to configure a few things: <a ui-sref="app.troubleshooting.sequelize.connection()">Troubleshooting Sequelize Connections</a> </p>
 
@@ -65,7 +62,7 @@
 
         <code-example type="javascript" code="vm.getSampleData5()"></code-example>
 
-        <p>This sets up a classic CRUD route that the UI expects to be there. When the server restarts, it should say <span class="code">DB CONNECTED</span> again. You can now browse to <a href="http://localhost:3000/api/products/">http://localhost:3000/api/products/</a> and get the following:</p>
+        <p>This sets up a classic CRUD route that the UI expects to be there. When the server restarts, it should say <span class="code">DB CONNECTED</span> again. You can now browse to <a href="http://localhost:3020/api/products/">http://localhost:3020/api/products/</a> and get the following:</p>
 
         <img src="images/getting-started-server-3rd.png" />
 
@@ -74,7 +71,7 @@
     <section>
         <h2>UI =&gt; Server =&gt; Database</h2>
         <p>Now’s the moment of truth: does the UI hook up to the DB and back like it should? Let’s test it out. Remember, we already switched out of prototype mode, so when we start the UI, it's going to be looking for a server now.</p>
-        <p>While your npm server is still running, open a new CMD window, browser to the ui folder and run <span class="code">yo scaffi:start ui</span>. When a new page opens in your browser, remember to open the console and refresh the page. If we click the <span class="code">Go to Products</span> link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to <span class="code">/api/products</span>.</p>
+        <p>You should already have a new tab open pointed to localhost:400. If not, open a new tab and go there. Let's also open the console. If we click the <span class="code">Go to Products</span> link on the main page, it’ll bring us to our products section with no data. However, if you look at the Network tab, you’ll notice that it made a request to <span class="code">/api/products</span>.</p>
 
         <img src="images/getting-started-server-4th.png" />
 

@@ -31,9 +31,6 @@ class GettingStartedServerSetup extends AbstractPage {
 	getSampleData1(){
 		return `
 	"components": {
-	    "app": {
-	      "port": 3000
-	    },
 	    "sequelize":{
 	      "dialect": "mssql"
 	    }
@@ -154,9 +151,6 @@ class GettingStartedServerSetup extends AbstractPage {
 	getSampleData6(){
 		return `
 	"components": {
-	    "app": {
-	      "port": 3000
-	    },
 	    "sequelize":{
 	      "dialect": "mssql"
 	    },
