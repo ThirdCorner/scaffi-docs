@@ -3,4 +3,13 @@
         <h1>yo scaffi:uninstall-server</h1>
         <p>Call this when you want to uninstall a server package.</p>
     </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:uninstall-server *</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p class="alert">!!! We don't want to use <mark>npm uninstall *</mark> directly anymore, because there are processes in the framework that keep everything in-sync for not only the build, but for everyone on the project. Always use one of the <mark>yo scaffi:uninstall-*</mark> commands when adding a package. !!!</p>
+        <p>We want to call this instead of <mark>npm uninstall *</mark> because it updates the build process so it doesn't get included. It also updates the package.json, so it's a good cleanup command to run. Plus you can call this command anywhere in the project.</p>
+    </section>
 </div>

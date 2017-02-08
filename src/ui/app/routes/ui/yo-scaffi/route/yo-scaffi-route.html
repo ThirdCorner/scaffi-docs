@@ -3,4 +3,13 @@
         <h1>yo scaffi:route</h1>
         <p>Call this when you want to make a route.</p>
     </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:route</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>When a ui route is made, Scaffi creates it in the <mark>src/ui/app/routes/**/*</mark> folder. If you provide the cli a route, it will create the new route in a nested location. This will give you a js ui-router controller, as well as a page index. Because of how things are structured, the page will be accessible via url once it's created.</p>
+        <p>If you say you want to get a split controller between mobile and web, Scaffi will make two controllers, ending in *.mobile.js and *.web.js respectively. This will allow you to specify platform-specific logic.</p>
+    </section>
 </div>

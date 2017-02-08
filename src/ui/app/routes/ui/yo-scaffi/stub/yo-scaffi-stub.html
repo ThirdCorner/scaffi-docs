@@ -3,4 +3,14 @@
         <h1>yo scaffi:stub</h1>
         <p>Call this when you want to make a page section that has a lot of logic or template data.</p>
     </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:stub</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>When a ui stub is made, Scaffi creates it in the <mark>src/ui/app/routes/**/*</mark> folder, depending on what route you provide. A stub acts exactly like a component, but positioned in a route so that you can break up large sections of page. Because it acts like a component, this means you can pass data to it through the scope object in the stub controller.</p>
+        <p>When you generate a stub, the name of the stub is prepended with the route location it exists in to avoid naming conflict with other files. Let's say we generated a stub page called 'install'. To use in a route's page, we can do the following in the html template of that page:</p>
+        <code-example type="html" code="vm.getCodeSample1()"></code-example>
+    </section>
 </div>

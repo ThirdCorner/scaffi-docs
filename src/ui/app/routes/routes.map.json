@@ -282,25 +282,9 @@
           "icon": "",
           "routes": [
             {
-              "id": "routes",
-              "displayText": "Routes (Modules)",
-              "sref": "app.ui.concepts.routes",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "pages",
-              "displayText": "Pages (States)",
-              "sref": "app.ui.concepts.pages",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "injection",
-              "displayText": "Injection",
-              "sref": "app.ui.concepts.injection",
+              "id": "classes",
+              "displayText": "Classes",
+              "sref": "app.ui.concepts.classes",
               "isDisplayable": true,
               "icon": "",
               "routes": []
@@ -314,9 +298,25 @@
               "routes": []
             },
             {
-              "id": "classes",
-              "displayText": "Classes",
-              "sref": "app.ui.concepts.classes",
+              "id": "injection",
+              "displayText": "Injection",
+              "sref": "app.ui.concepts.injection",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "pages",
+              "displayText": "Pages (States)",
+              "sref": "app.ui.concepts.pages",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "routes",
+              "displayText": "Routes (Modules)",
+              "sref": "app.ui.concepts.routes",
               "isDisplayable": true,
               "icon": "",
               "routes": []

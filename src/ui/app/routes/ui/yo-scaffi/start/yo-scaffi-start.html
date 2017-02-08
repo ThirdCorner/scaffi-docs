@@ -1,6 +1,16 @@
 <div class="route route-ui.yo-scaffi.start">
     <section>
         <h1>yo scaffi:start ui</h1>
-        <p>Call this when you want to start the UI for coding.</p>
+        <p>Call this when you want to start your app in a local environment. This will start your front-end app and server at the same time so that your app can function correctly.</p>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:start [platform]</p>
+        <p>Platforms: web, ios, android</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>Use this command when you want to test code or run the app locally. Based on the <mark>yo scaffi:mode</mark> command you call before, the app will run with whatever config is set. When the start command runs, it will check if your current node_modules are up-to-date with the app's package.json for both UI and Server (in case someone installed or uninstalled packages), it will run the build process to package everything, and then it will run the Server and BrowserSync instances so your app can function. LiveReload is automatically enabled, and will rebuild js and html before reloading the browser automatically. For sass changes, the styles are auto-injected without having to reload.</p>
+        <p>For mobile platforms, there's not really any distinction between ios and android, unless you have mobile platform-specific packages installed for your app. The start command will open a browser window as if you were running <mark>ionic serve</mark> directly. So if you're just looking to test mobile as a general environment, pick your favorite platform between the two and run one. You'll be essentially testing both simultaneously (barring any os specific bugs).</p>
     </section>
 </div>

@@ -41,10 +41,7 @@ class ConceptsClasses extends AbstractPage {
 		`
 	}
 	getCode2(){
-		return `
-	
-	file: app/helpers/string-helper.js
-	
+		return `	
 	'use strict';
 	
 	class StringHelper {
@@ -66,14 +63,14 @@ class ConceptsClasses extends AbstractPage {
 		return `
 	‘use strict’;
 
-	import {RouteConfig} from ‘app/ng-decorators’;
+	import {RouteConfig} from ‘scaffi-ui-core’;
 	
-	import StringHelper from ‘app/core/helpers/StringHelper’;
+	import StringHelper from ‘../../core/helpers/StringHelper’;
 	import template from './starting-index.html';
 	
-	const ROUTE = 'app.starting.index;
+	const ROUTE = "app.starting.index";
 	const PARAMS = {
-		url: '/,
+		url: "/",
 		template: template,
 		resolve: {
 	
@@ -103,7 +100,7 @@ class ConceptsClasses extends AbstractPage {
 	}
 	getCode4(){
 		return `
-	import StringHelper from ‘app/helpers/StringHelper’;
+	import StringHelper from ‘../../helpers/StringHelper’;
 		`
 	}
 	getCode5(){

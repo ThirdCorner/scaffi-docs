@@ -1,6 +1,14 @@
 <div class="route route-ui.yo-scaffi.theme">
     <section>
         <h1>yo scaffi:theme</h1>
-        <p>Call this when you want to set the theme for the project. You can either do Angular Material or Bootstrap.</p>
+        <p>Call this when you want to set the theme for the project.</p>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:theme</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>When you create a project, this generator is actually called before the install process ends. Thus, you can technically call it on a project if you want to switch between bootstrap or material. If you do change the theming engine of an app, you will have to manually replace any components in use in the app and change the includes in the <mark>/src/ui/app/theme/theme.js</mark> file.</p>
     </section>
 </div>

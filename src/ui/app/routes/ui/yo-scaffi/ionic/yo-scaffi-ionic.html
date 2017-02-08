@@ -3,4 +3,20 @@
         <h1>yo scaffi:ionic</h1>
         <p>Call this when you want to use one of the ionic cli commands on your project. Based on the command, Scaffi will redirect it to the appropriate folder.</p>
     </section>
+    <section>
+        <h2>Supported Commands</h2>
+        <p class="command">yo scaffi:ionic browser * *</p>
+        <p class="command">yo scaffi:ionic info</p>
+        <p class="command">yo scaffi:ionic emulate *</p>
+        <p class="command">yo scaffi:ionic platform *</p>
+        <p class="command">yo scaffi:ionic plugin * * </p>
+        <p class="command">yo scaffi:ionic run *</p>
+        <p class="command">yo scaffi:ionic resources</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p>Because Scaffi structure is not exactly Ionic structure, most commands have been brought in to work as if it were ionic.</p>
+        <p>Some commands are NOT supported, such as serve (which is synonymous to <mark>yo scaffi:start *</mark>) and build (which is synonymous to <mark>yo scaffi:build * *</mark>)</p>
+        <p>Also to note, currently, options do not get passed into an ionic command, such as platform --nosave. Until this issue is fixed, if you need to run an ionic command with an option flag, or a command that is not currently supported, you can navigate to <mark>/src/ui/mobile/</mark> and run direct ionic commands there. If you need to run an ionic command that relies on a ui, you can run the <mark>yo scaffi:build</mark> command and then run your ionic command after navigating to <mark>/src/ui/build/[platform]/public</mark>.</p>
+    </section>
 </div>

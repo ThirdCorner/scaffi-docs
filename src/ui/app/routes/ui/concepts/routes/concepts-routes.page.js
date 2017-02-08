@@ -49,11 +49,11 @@ class ConceptsRoutes extends AbstractPage {
 		return `
 	'use strict';
 
-	import {RouteConfig} from 'app/ng-decorators';  // jshint unused: false
+	import {RouteConfig} from 'scaffi-ui-core';  // jshint unused: false
 	
-	const ROUTE = 'app.billing-report;
+	const ROUTE = "app.billing-report";
 	const PARAMS = {
-		url: '/billing-report,
+		url: "/billing-report",
 		template: "<ui-view></ui-view>",
 		redirectTo: "app.billing-report.index",
 		ncyBreadcrumb: {
@@ -67,7 +67,7 @@ class ConceptsRoutes extends AbstractPage {
 	class BillingReport {
 		constructor(){
 	
-	}
+		}
 	}
 	
 	export default BillingReport;

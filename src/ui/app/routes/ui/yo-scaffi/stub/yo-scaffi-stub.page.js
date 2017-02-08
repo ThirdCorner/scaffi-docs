@@ -28,7 +28,13 @@ class YoScaffiStub extends AbstractPage {
 		this.$state = $state;
 		this.$scope = $scope;
 	}
-
+	getCodeSample1(){
+		return `
+	<section>
+		<overview-page-install></overview-page-install>
+	</section>
+		`
+	}
 }
 
 export default YoScaffiStub;
