@@ -113,6 +113,14 @@
           "icon": "",
           "routes": [
             {
+              "id": "build",
+              "displayText": "Build",
+              "sref": "app.ui.yo-scaffi.build",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
               "id": "component",
               "displayText": "Component",
               "sref": "app.ui.yo-scaffi.component",
@@ -129,73 +137,9 @@
               "routes": []
             },
             {
-              "id": "mode",
-              "displayText": "Mode",
-              "sref": "app.ui.yo-scaffi.mode",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "route",
-              "displayText": "Route",
-              "sref": "app.ui.yo-scaffi.route",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "page",
-              "displayText": "Page",
-              "sref": "app.ui.yo-scaffi.page",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "service",
-              "displayText": "Service",
-              "sref": "app.ui.yo-scaffi.service",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "stub",
-              "displayText": "Stub",
-              "sref": "app.ui.yo-scaffi.stub",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "start",
-              "displayText": "Start",
-              "sref": "app.ui.yo-scaffi.start",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
               "id": "factory",
               "displayText": "Factory",
               "sref": "app.ui.yo-scaffi.factory",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "theme",
-              "displayText": "Theme",
-              "sref": "app.ui.yo-scaffi.theme",
-              "isDisplayable": true,
-              "icon": "",
-              "routes": []
-            },
-            {
-              "id": "build",
-              "displayText": "Build",
-              "sref": "app.ui.yo-scaffi.build",
               "isDisplayable": true,
               "icon": "",
               "routes": []
@@ -252,6 +196,62 @@
               "id": "ionic",
               "displayText": "Ionic",
               "sref": "app.ui.yo-scaffi.ionic",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "mode",
+              "displayText": "Mode",
+              "sref": "app.ui.yo-scaffi.mode",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "page",
+              "displayText": "Page",
+              "sref": "app.ui.yo-scaffi.page",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "route",
+              "displayText": "Route",
+              "sref": "app.ui.yo-scaffi.route",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "service",
+              "displayText": "Service",
+              "sref": "app.ui.yo-scaffi.service",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "start",
+              "displayText": "Start",
+              "sref": "app.ui.yo-scaffi.start",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "stub",
+              "displayText": "Stub",
+              "sref": "app.ui.yo-scaffi.stub",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "theme",
+              "displayText": "Theme",
+              "sref": "app.ui.yo-scaffi.theme",
               "isDisplayable": true,
               "icon": "",
               "routes": []

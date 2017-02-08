@@ -28,7 +28,16 @@ class YoScaffiInstallServer extends AbstractPage {
 		this.$state = $state;
 		this.$scope = $scope;
 	}
-
+	getCodeSample1(){
+		return `
+	import _ from 'lodash';
+	module.exports = function(app, router, items) {
+		var found = _.find(items, (item)=>{
+			return item.public;
+		});
+	}
+		`;
+	}
 }
 
 export default YoScaffiInstallServer;

@@ -28,6 +28,33 @@ class YoScaffiInstallAndroid extends AbstractPage {
 		this.$state = $state;
 		this.$scope = $scope;
 	}
+	
+	getCodeSample1(){
+		return `
+	'use strict';
+
+	import {AbstractBootstrap} from 'scaffi-ui-core';
+	import ScaffiUi from 'scaffi-ui-core';
+	
+	import 'ng-table';
+	 
+	class Theme extends AbstractBootstrap {
+		initialize(){
+			this.addRequires([
+				'ui.bootstrap',
+				'angular-loading-bar',
+			]);
+
+			
+			if(ScaffiUi.config.isAndroidPlatform()){
+				this.addRequires(['ngTable']);
+			}
+		}
+	}
+
+	export default Theme;
+		`
+	}
 
 }
 

@@ -14,5 +14,7 @@
         <code-example type="javascript" code="vm.getCodeSample1()"></code-example>
         <p>To use in your controller, you inject it in the constructor of your class and call it like you would any typical class:</p>
         <code-example type="javascript" code="vm.getCodeSample2()"></code-example>
+
+        <p class="alert">!!! If you're injecting additional providers into a factory, you need to inject them in three places: In static factory params, in the new instance of the factory class, and in the constructor of the factory class. Take a look at the $rootScope in the first example. Notice how it's referenced three times in order to make it usable inside the factory class. !!!</p>
     </section>
 </div>

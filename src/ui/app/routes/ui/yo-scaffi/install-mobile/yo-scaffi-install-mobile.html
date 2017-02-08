@@ -1,6 +1,21 @@
 <div class="route route-ui.yo-scaffi.install-mobile">
     <section>
         <h1>yo scaffi:install-mobile</h1>
-        <p>Call this when you want to install an package for mobiles builds.</p>
+        <p>Call this when you want to install a package for android and ios mobile builds only.</p>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:install-mobile ng-table</p>
+        <p class="command">yo scaffi:install-mobile github:angular-wizard/angular-wizard</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p class="alert">!!! We don't want to use <mark>npm install *</mark> directly anymore, because there are processes in the framework that keep everything in-sync for not only the build, but for everyone on the project. Always use one of the <mark>yo scaffi:install-*</mark> commands when adding a package. !!!</p>
+        <p>This command is used if you want to install npm/github packages that will only be used for mobile builds. Use it like you would <mark>npm install</mark>.</p>
+        <p>This is how we manage to inject ionic into mobile builds, while excluding it from web builds. In <mark>src/ui/app/theme/theme.js</mark> we do this:</p>
+
+        <code-example type="javascript" code="vm.getCodeSample1()"></code-example>
+
+        <p>The <mark>import 'ionic-angular/release/js/ionic.js';</mark> will be imported into the vendor.js file for any mobile build, while being excluded from web builds.</p>
     </section>
 </div>

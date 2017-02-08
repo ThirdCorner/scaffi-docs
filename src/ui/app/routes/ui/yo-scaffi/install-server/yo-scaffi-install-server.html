@@ -1,6 +1,18 @@
 <div class="route route-ui.yo-scaffi.install-server">
     <section>
         <h1>yo scaffi:install-server</h1>
-        <p>Call this when you want to install an package for the scaffi server of a project.</p>
+        <p>Call this when you want to install a package for the scaffi server of a project.</p>
     </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:install-server lodash</p>
+        <p class="command">yo scaffi:install-server github:npm/node-semver</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p class="alert">!!! We don't want to use <mark>npm install *</mark> directly anymore, because there are processes in the framework that keep everything in-sync for not only the build, but for everyone on the project. Always use one of the <mark>yo scaffi:install-*</mark> commands when adding a package. !!!</p>
+        <p>This command is used when you want to install a package to the server. After you install it, you'd import it like normal in the server to use:</p>
+    </section>
+
+    <code-example type="javascript" code="vm.getCodeSample1()"></code-example>
 </div>

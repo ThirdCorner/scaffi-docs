@@ -27,8 +27,8 @@ class OverviewIndex extends AbstractPage {
 		
 		this.$state = $state;
 		this.$scope = $scope;
+		this.ROUTE = ROUTE;
 	}
-
 }
 
 export default OverviewIndex;

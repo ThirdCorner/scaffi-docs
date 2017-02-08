@@ -1,6 +1,19 @@
 <div class="route route-ui.yo-scaffi.install-ui">
     <section>
         <h1>yo scaffi:install-ui</h1>
-        <p>Call this when you want to install an package for the ui portion of a project. This will be accessible for all mobile and web app builds.</p>
+        <p>Call this when you want to install a package for the ui portion of a project. This will be accessible for all mobile and web app builds.</p>
+    </section>
+    <section>
+        <h2>Usage</h2>
+        <p class="command">yo scaffi:install-ui ng-table</p>
+        <p class="command">yo scaffi:install-ui github:angular-wizard/angular-wizard</p>
+    </section>
+    <section>
+        <h2>In-depth Description</h2>
+        <p class="alert">!!! We don't want to use <mark>npm install *</mark> directly anymore, because there are processes in the framework that keep everything in-sync for not only the build, but for everyone on the project. Always use one of the <mark>yo scaffi:install-*</mark> commands when adding a package. !!!</p>
+        <p>This command is used if you want to install npm/github packages that will be used in all platform builds, from mobile to web. Use it like you would <mark>npm install</mark>.</p>
+        <p>Otherwise it's just a typical Angular inject like normal:</p>
+
+        <code-example type="javascript" code="vm.getCodeSample1()"></code-example>
     </section>
 </div>

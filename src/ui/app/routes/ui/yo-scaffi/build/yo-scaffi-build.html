@@ -11,6 +11,20 @@
     </section>
     <section>
         <h2>In-depth Description</h2>
-        <p>As a broad overview, when this command is run, it bundles up any necessary app resources, and runs browserify on the app.js to generate the app script bundle. If it's building for mobile, it moves everything to the <mark>builds/ios|android</mark> folder. If it's building for web, it moves the front-end resources to the <mark>src/server/public</mark> folder, and then moves the entire server folder to <mark>builds/web/server</mark> folder.</p>
+        <p>As a broad overview, when this command is run, it bundles up any necessary app resources (js, html, scss), and runs browserify on the app.js to generate the app script bundle.</p>
+
+        <h3>Building Web</h3>
+        <p class="command">yo scaffi:build web [environment] --version=###</p>
+        <p>When a web build happens, the resulting server + ui bundle will end up in <mark>/builds/web/server</mark>. If a web.config does not exist, the generator will add a basic one in case the server is being run by IIS. IISNode will need to be installed separately, however, the server should then load inside IIS and is hooked up to receive the port passed by IIS in that instance. </p>
+
+
+        <h3>Building Android/iOS</h3>
+        <p class="command">yo scaffi:build ios [environment] --version=### --name=AppName --namespace=com.*.*</p>
+        <p class="command">yo scaffi:build android [environment] --version=### --name=AppName --namespace=com.*.*</p>
+
+        <p><mark>--name</mark>: What to name the app once it's installed on a device</p>
+        <p><mark>--namespace</mark>: This is most prevalent with ios; This is the corresponding app_id associated with a provisioning profile.</p>
+        <p>When building a mobile version, the generators will copy over the <mark>/src/ui/mobile</mark> folder into the <mark>/src/ui/build/[platform]/public</mark> folder, bundle all resources, run ionic build, and then transfer the resulting ipa / apk into the <mark>/builds/[platform]/public</mark> folder. If you're using an automated build process that will sign the app, you can run any additional commands on the <mark>/src/ui/build/[platform]/</mark> folder as if it were an ionic project.</p>
+        <p></p>
     </section>
 </div>
