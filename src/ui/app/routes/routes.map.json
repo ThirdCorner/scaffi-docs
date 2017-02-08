@@ -107,14 +107,14 @@
       "routes": [
         {
           "id": "yo-scaffi",
-          "displayText": "Yo Scaffi",
+          "displayText": "yo scaffi",
           "sref": "app.ui.yo-scaffi",
           "isDisplayable": true,
           "icon": "",
           "routes": [
             {
               "id": "build",
-              "displayText": "Build",
+              "displayText": "build",
               "sref": "app.ui.yo-scaffi.build",
               "isDisplayable": true,
               "icon": "",
@@ -122,7 +122,7 @@
             },
             {
               "id": "component",
-              "displayText": "Component",
+              "displayText": "component",
               "sref": "app.ui.yo-scaffi.component",
               "isDisplayable": true,
               "icon": "",
@@ -130,7 +130,7 @@
             },
             {
               "id": "directive",
-              "displayText": "Directive",
+              "displayText": "directive",
               "sref": "app.ui.yo-scaffi.directive",
               "isDisplayable": true,
               "icon": "",
@@ -138,7 +138,7 @@
             },
             {
               "id": "factory",
-              "displayText": "Factory",
+              "displayText": "factory",
               "sref": "app.ui.yo-scaffi.factory",
               "isDisplayable": true,
               "icon": "",
@@ -146,7 +146,7 @@
             },
             {
               "id": "install-android",
-              "displayText": "Install Android",
+              "displayText": "install-android",
               "sref": "app.ui.yo-scaffi.install-android",
               "isDisplayable": true,
               "icon": "",
@@ -154,7 +154,7 @@
             },
             {
               "id": "install-ios",
-              "displayText": "Install Ios",
+              "displayText": "install-ios",
               "sref": "app.ui.yo-scaffi.install-ios",
               "isDisplayable": true,
               "icon": "",
@@ -162,7 +162,7 @@
             },
             {
               "id": "install-mobile",
-              "displayText": "Install Mobile",
+              "displayText": "install-mobile",
               "sref": "app.ui.yo-scaffi.install-mobile",
               "isDisplayable": true,
               "icon": "",
@@ -170,7 +170,7 @@
             },
             {
               "id": "install-server",
-              "displayText": "Install Server",
+              "displayText": "install-server",
               "sref": "app.ui.yo-scaffi.install-server",
               "isDisplayable": true,
               "icon": "",
@@ -178,7 +178,7 @@
             },
             {
               "id": "install-ui",
-              "displayText": "Install Ui",
+              "displayText": "install-ui",
               "sref": "app.ui.yo-scaffi.install-ui",
               "isDisplayable": true,
               "icon": "",
@@ -186,7 +186,7 @@
             },
             {
               "id": "install-web",
-              "displayText": "Install Web",
+              "displayText": "install-web",
               "sref": "app.ui.yo-scaffi.install-web",
               "isDisplayable": true,
               "icon": "",
@@ -194,7 +194,7 @@
             },
             {
               "id": "ionic",
-              "displayText": "Ionic",
+              "displayText": "ionic",
               "sref": "app.ui.yo-scaffi.ionic",
               "isDisplayable": true,
               "icon": "",
@@ -202,7 +202,7 @@
             },
             {
               "id": "mode",
-              "displayText": "Mode",
+              "displayText": "mode",
               "sref": "app.ui.yo-scaffi.mode",
               "isDisplayable": true,
               "icon": "",
@@ -210,7 +210,7 @@
             },
             {
               "id": "page",
-              "displayText": "Page",
+              "displayText": "page",
               "sref": "app.ui.yo-scaffi.page",
               "isDisplayable": true,
               "icon": "",
@@ -218,7 +218,7 @@
             },
             {
               "id": "route",
-              "displayText": "Route",
+              "displayText": "route",
               "sref": "app.ui.yo-scaffi.route",
               "isDisplayable": true,
               "icon": "",
@@ -226,7 +226,7 @@
             },
             {
               "id": "service",
-              "displayText": "Service",
+              "displayText": "service",
               "sref": "app.ui.yo-scaffi.service",
               "isDisplayable": true,
               "icon": "",
@@ -234,7 +234,7 @@
             },
             {
               "id": "start",
-              "displayText": "Start",
+              "displayText": "start",
               "sref": "app.ui.yo-scaffi.start",
               "isDisplayable": true,
               "icon": "",
@@ -242,7 +242,7 @@
             },
             {
               "id": "stub",
-              "displayText": "Stub",
+              "displayText": "stub",
               "sref": "app.ui.yo-scaffi.stub",
               "isDisplayable": true,
               "icon": "",
@@ -250,7 +250,7 @@
             },
             {
               "id": "theme",
-              "displayText": "Theme",
+              "displayText": "theme",
               "sref": "app.ui.yo-scaffi.theme",
               "isDisplayable": true,
               "icon": "",
@@ -258,7 +258,7 @@
             },
             {
               "id": "uninstall-server",
-              "displayText": "Uninstall Server",
+              "displayText": "uninstall-server",
               "sref": "app.ui.yo-scaffi.uninstall-server",
               "isDisplayable": true,
               "icon": "",
@@ -266,7 +266,7 @@
             },
             {
               "id": "uninstall-ui",
-              "displayText": "Uninstall Ui",
+              "displayText": "uninstall-ui",
               "sref": "app.ui.yo-scaffi.uninstall-ui",
               "isDisplayable": true,
               "icon": "",
