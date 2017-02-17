@@ -79,6 +79,22 @@
               "routes": []
             },
             {
+              "id": "make-a-stub",
+              "displayText": "Make A Stub",
+              "sref": "app.overview.getting-started.make-a-stub",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
+              "id": "installing-packages",
+              "displayText": "Installing Packages",
+              "sref": "app.overview.getting-started.installing-packages",
+              "isDisplayable": true,
+              "icon": "",
+              "routes": []
+            },
+            {
               "id": "conclusion",
               "displayText": "Conclusion",
               "sref": "app.overview.getting-started.conclusion",

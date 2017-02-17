@@ -5,6 +5,8 @@ import './overview/getting-started/editing-fixtures/getting-started-editing-fixt
 import './overview/getting-started/fixture-setup/getting-started-fixture-setup.page.js';
 import './overview/getting-started/getting-started.route.js';
 import './overview/getting-started/index/getting-started-index.page.js';
+import './overview/getting-started/installing-packages/getting-started-installing-packages.page.js';
+import './overview/getting-started/make-a-stub/getting-started-make-a-stub.page.js';
 import './overview/getting-started/project-setup/getting-started-project-setup.page.js';
 import './overview/getting-started/route-setup/getting-started-route-setup.page.js';
 import './overview/getting-started/server-setup/getting-started-server-setup.page.js';

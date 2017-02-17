@@ -1,0 +1,46 @@
+<div class="route route-overview.getting-started.installing-packages">
+    <section>
+        <h1>Installing Packages</h1>
+        <p>You’ll usually need to leverage other packages for an app so you’re not reinventing the wheel. In this instance, we want an idle checking component.</p>
+
+        <p>Kill your Scaffi start instance and run the following:</p>
+        <p class="command">yo scaffi:install-ui ng-idle</p>
+
+        <p>What this does is run an npm install command for you and ensures the package.json file gets updated. Not only that, but it updates the build system so that if there are other coders on the project, this will make sure they get the package installed when they run <mark>yo scaffi:start web</mark>.</p>
+
+        <p>If we wanted to install a server package, the command would be:</p>
+        <p class="command">yo scaffi:install-server [package]</p>
+
+        <p>Once the ngIdle package is installed, we need to import it into the app.</p>
+        <p>In <mark>src/ui/app/theme/theme.js</mark>, let’s import it right before the class name:</p>
+
+        <code-example type="javascript" code="vm.getExample1()"></code-example>
+
+        <p>Then we need to add it as an angular require and configure it a bit:</p>
+        <code-example type="javascript" code="vm.getExample2()"></code-example>
+
+        <p>If you’re familiar with Angular, this looks a bit different from how you would require and configure an angular package:</p>
+        <code-example type="javascript" code="vm.getExample3()"></code-example>
+
+        <p>The only main differences are that we access the app from scaffi-ui-core and are using ES6 syntax.</p>
+        <p>Now, to actually use this package, let’s add it to the products-form page <mark>(src/ui/app/routes/products/form/products-form.page.js)</mark></p>
+        <code-example type="javascript" code="vm.getExample4()"></code-example>
+
+        <p>Here we’ve imported a material dialog hook and are firing that dialog when ngIdle fires an IdleTimeout event.</p>
+        <p>Run the startup command:</p>
+        <p class="command">yo scaffi:start web</p>
+
+        <p>Navigate to the form page by clicking one of the product items and let your form page sit there for 5 seconds. A popup should show about being caked.</p>
+        <p>And that’s how you add packages in Scaffi UI. You’ll be doing that a lot.</p>
+
+        <p>Make sure you take a look at the other variants of install generators in Scaffi: <a ui-sref="app.ui.yo-scaffi">Generators</a></p>
+
+
+    </section>
+
+    <section layout="row">
+        <md-button ui-sref="app.overview.getting-started.make-a-stub"><i class="fa fa-arrow-left"></i> Make a Stub</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.conclusion">Conclusion <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>

@@ -1,0 +1,48 @@
+<div class="route route-overview.getting-started.make-a-stub">
+    <section>
+        <h1>Make A Stub</h1>
+        <p>Now that our app is hooked up to a database, let’s do a bit of cleanup to get used to some of the other process changes in Scaffi. We have some duplicated code in the products list page, so let’s clean it up and componentize it. In <mark>products-index.html</mark>, we’re duplicating the display for active and completed items. Since there’s a good chunk of code there, let’s make it a reusable stub.</p>
+        <p>A stub is the same as a component, only a stub is used for a specific page. You can make a stub if you have repeating display elements or if you want to break up a template page that’s more than 200 lines.</p>
+        <p>If you have the server running, go ahead and kill it and run:</p>
+        <p class="command">yo scaffi:stub</p>
+        <ul class="list">
+            <li>
+                <b>Stub Name</b>: list
+            </li>
+            <li>
+                <b>Route</b>: products/index
+            </li>
+            <li>
+                Hint enter for basic
+            </li>
+            <li>
+                <b>Separate Controllers</b>: n
+            </li>
+        </ul>
+        <p>This will add a <mark>products-index-list.html</mark> and a <mark>products-index-list.stub.js</mark> to your <mark>routes/products/index</mark> folder.</p>
+        <p>In your products-index-list.html page, paste the following: </p>
+
+        <code-example type="html" code="vm.getExample1()"></code-example>
+
+        <p>In <mark>products-index-list.stub.js</mark>, paste the following:</p>
+
+        <code-example type="javascript" code="vm.getExample2()"></code-example>
+
+        <p>And finally, in <mark>products.index.html</mark>, paste the following:</p>
+
+        <code-example type="html" code="vm.getExample3()"></code-example>
+
+        <p>As you can see the stuff being inserted in place of our list logic, the tag name is the same as the stub name we made. We're also taking advantage of the enclosed scope to pass data into the stub component.</p>
+
+        <p>After making all those changes, run:</p>
+
+        <p class="command">yo scaffi:start web</p>
+
+        <p>Go back to the products page and change the status of one item to test that everything’s still hooked up and working. Also, be sure to take a gander at all the other generators you have access to: <a ui-sref="app.ui.yo-scaffi">Generators</a></p>
+    </section>
+    <section layout="row">
+        <md-button ui-sref="app.overview.getting-started.server-setup"><i class="fa fa-arrow-left"></i> Server Setup</md-button>
+        <div flex></div>
+        <md-button ui-sref="app.overview.getting-started.installing-packages">Installing Packages <i class="fa fa-arrow-right"></i></md-button>
+    </section>
+</div>
