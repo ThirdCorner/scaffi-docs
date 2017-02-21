@@ -16,14 +16,6 @@
       "icon": "",
       "routes": [
         {
-          "id": "installation",
-          "displayText": "Installation",
-          "sref": "app.overview.installation",
-          "isDisplayable": true,
-          "icon": "",
-          "routes": []
-        },
-        {
           "id": "getting-started",
           "displayText": "Getting Started",
           "sref": "app.overview.getting-started",
@@ -105,9 +97,25 @@
           ]
         },
         {
+          "id": "installation",
+          "displayText": "Installation",
+          "sref": "app.overview.installation",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": []
+        },
+        {
           "id": "migrations",
           "displayText": "Migrations",
           "sref": "app.overview.migrations",
+          "isDisplayable": true,
+          "icon": "",
+          "routes": []
+        },
+        {
+          "id": "setup-existing",
+          "displayText": "Setup Existing",
+          "sref": "app.overview.setup-existing",
           "isDisplayable": true,
           "icon": "",
           "routes": []

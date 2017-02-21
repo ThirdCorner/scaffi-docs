@@ -16,6 +16,8 @@ import './overview/installation/overview-installation-install.stub.js';
 import './overview/installation/overview-installation.page.js';
 import './overview/migrations/overview-migrations.page.js';
 import './overview/overview.route.js';
+import './overview/setup-existing/index/setup-existing-index.page.js';
+import './overview/setup-existing/setup-existing.route.js';
 import './server/api-hooks/api-hooks.route.js';
 import './server/api-hooks/app/api-hooks-app.page.js';
 import './server/api-hooks/index/api-hooks-index.page.js';

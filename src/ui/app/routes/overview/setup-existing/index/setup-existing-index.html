@@ -1,0 +1,42 @@
+<div class="route route-overview.setup-existing.index">
+    <section>
+        <h1>Setup an Existing App</h1>
+        <p>If you ever have to run an existing app, there's a few steps you’ll need to follow to get things running:</p>
+        <ol class="ordered">
+
+            <li>Make sure you have <mark>yo</mark> and <mark>generator-scaffi</mark> installed globally. Refer to the <a ui-sref="app.overview.installation">Installation Guide</a> on the actual commands.</li>
+            <li>Check out the project from svn/git; You'll probably need to switch to the develop branch, but check with your project lead about that.</li>
+            <li>
+                Go into <mark>src/server/config</mark> and create a <mark>scaffi-server.localhost.private.json</mark>
+                <ol>
+                    <li>You’ll need to either reference another config to see what properties the project is using, or ask an existing member to share theirs.</li>
+                    <li>Environment in the config needs to be <mark>localhost</mark></li>
+                </ol>
+            </li>
+            <li>
+                Go into <mark>src/ui/config</mark> and create a <mark>scaffi-ui.localhost.private.json</mark>. Again reference an existing config or ask for one.
+                <ol>
+                    <li>Environment needs to be <mark>localhost</mark></li>
+                    <li>You don’t need domain or mobileDomain for localhost unless your apis are located externally.</li>
+                </ol>
+            </li>
+            <li>Run <mark>yo scaffi:mode localhost</mark> to switch localhost configs into use.</li>
+            <li>
+                If you need to seed a database, go into <mark>src/server/scaffi-server.private.json</mark>
+                <ol>
+                    <li>
+                        In the <mark>components.sequelize</mark> object, you want to add the following property:
+                        <ol>
+                            <li>sync: true</li>
+                            <li><img src="/images/startup-config.png" /></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>Run <mark>yo scaffi:start web</mark> (or whatever platform you want to work on); This will do any necessary npm installs for the server and ui. This will also eventually seed your local database if there are no sequelize errors.</li>
+            <li>Once your app opens in a tab, if you synced a database, you’ll need to go back into <mark>src/server/scaffi-server.private.json</mark> and remove the sync property. When you save, this will restart the server.</li>
+
+        </ol>
+        <p>You should be good after that.</p>
+    </section>
+</div>
